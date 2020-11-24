@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.less";
+import Hero from "./Hero.js";
+import About from "./About.js";
+import Features from "./Features.js";
+import FAQ from "./FAQ.js";
+import Register from "./Register.js";
+import { Layout } from "antd";
+const { Footer } = Layout;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Hero />
+			<About />
+			<Features />
+			<Register />
+			<FAQ />
+			<Footer style={{ textAlign: "center", "background-color": "#263238" }}>
+				Fanance Club ©2020
+			</Footer>
+		</div>
+	);
 }
 
 export default App;
