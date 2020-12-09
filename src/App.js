@@ -15,7 +15,7 @@ function App() {
 			<Features />
 			<Register />
 			<FAQ />
-			<Footer style={{ textAlign: "center", "background-color": "#263238" }}>
+			<Footer style={{ textAlign: "center", backgroundColor: "#263238" }}>
 				Fanance Club ©2020
 			</Footer>
 		</div>

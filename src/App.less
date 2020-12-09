@@ -5,9 +5,15 @@
 }
 
 .hero {
-	// height: 70vh;
-	background: linear-gradient(170deg, #84ffff, #18ffff, #263238, #263238);
-	background-blend-mode: multiply;
+	// height: 80vh;
+	background: linear-gradient(
+			170deg,
+			rgba(24, 255, 255, 0.8),
+			rgba(24, 255, 255, 0.8),
+			rgba(38, 50, 56, 1),
+			rgba(38, 50, 56, 1)
+		)
+	// background-blend-mode: multiply;
 }
 
 .hero-image {
@@ -24,6 +30,9 @@
 	background-color: #18ffff;
 	font-weight: bold;
 }
+.ant-card-head-title {
+	text-align:center;
+}
 .ant-card-body {
 	background-color: #263238;
 	color: white;
@@ -32,12 +41,20 @@
 label.ant-form-item-required {
 	color: white;
 }
+
+.about-image {
+	width: 70%;
+}
+
 @media only screen and (max-width: 768px) {
 	.hero-image {
 		margin-top: 0px;
 	}
 	.feature-card {
 		margin: 0 5% 25px 5%;
+	}
+	.about-image {
+		width: 100%;
 	}
 }
 

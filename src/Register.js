@@ -1,14 +1,8 @@
 import React from "react";
 import { Form, Input, Button, notification } from "antd";
-import {
-	FacebookOutlined,
-	TwitterOutlined,
-	InstagramOutlined,
-	LinkedinOutlined,
-	LikeFilled,
-} from "@ant-design/icons";
-import querystring from "querystring";
-import https from "https";
+import { MediumOutlined, TwitterOutlined, LikeFilled } from "@ant-design/icons";
+// import querystring from "querystring";
+// import https from "https";
 const layout = {
 	labelCol: {
 		span: 8,
@@ -22,60 +16,73 @@ class Register extends React.Component {
 	formRef = React.createRef();
 	onSubmit = () => {
 		const value = document.getElementById("email").value;
-		var post_data = querystring.stringify({
-			username: "fanance.club@gmail.com",
-			api_key:
-				"E4C0AD6BBEEB6A156FF8D6DEF4E8B72CC9C456876DF1CA4F5FF443A3BED4884AB1E875AB4E09D7ECE9B42AFDBDC4B5F8",
-			from: "fanance.club@gmail.com",
-			from_name: "Fanance Club",
-			to: "fanance.club@gmail.com",
-			subject: `New Registration - ${value}`,
-			body_html: `<b><u>New Customer Registration:</u></b><br /> Mail id: ${value}<br /> `,
-			body_text: "",
-		});
+		// var post_data = querystring.stringify({
+		// 	username: "fanance.club@gmail.com",
+		// 	api_key:
+		// 		"E4C0AD6BBEEB6A156FF8D6DEF4E8B72CC9C456876DF1CA4F5FF443A3BED4884AB1E875AB4E09D7ECE9B42AFDBDC4B5F8",
+		// 	from: "fanance.club@gmail.com",
+		// 	from_name: "Fanance Club",
+		// 	to: "fanance.club@gmail.com",
+		// 	subject: `New Registration - ${value}`,
+		// 	body_html: `<b><u>New Customer Registration:</u></b><br /> Mail id: ${value}<br /> `,
+		// 	body_text: "",
+		// });
 
-		// Object of options.
-		var post_options = {
-			host: "api.elasticemail.com",
-			path: "/mailer/send",
-			port: "443",
-			method: "POST",
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Content-Length": post_data.length,
-			},
-		};
-		var result = "";
-		// Create the request object.
-		var post_req = https.request(post_options, function (res) {
-			res.setEncoding("utf8");
-			res.on("data", function (chunk) {
-				result = chunk;
-			});
-			res.on("error", function (e) {
-				result = "Error: " + e.message;
-			});
-		});
+		// // Object of options.
+		// var post_options = {
+		// 	host: "api.elasticemail.com",
+		// 	path: "/mailer/send",
+		// 	port: "443",
+		// 	method: "POST",
+		// 	headers: {
+		// 		"Content-Type": "application/x-www-form-urlencoded",
+		// 		"Content-Length": post_data.length,
+		// 	},
+		// };
+		// var result = "";
+		// // Create the request object.
+		// var post_req = https.request(post_options, function (res) {
+		// 	res.setEncoding("utf8");
+		// 	res.on("data", function (chunk) {
+		// 		result = chunk;
+		// 	});
+		// 	res.on("error", function (e) {
+		// 		result = "Error: " + e.message;
+		// 	});
+		// });
 
-		// Post to Elastic Email
+		// // Post to Elastic Email
 		// post_req.write(post_data);
-		post_req.end();
+		// post_req.end();
+		//Google Sheets Integration
+		const scriptUrl =
+			"https://script.google.com/macros/s/AKfycbyAAtIrUMI6z5lTR6GqgGn0_9xTktPGmKrSzL9PnLZlWD9XE7to/exec";
+		const url = `${scriptUrl}?callback=ctrlq&email=${value}`;
+		fetch(url, { mode: "no-cors" }).then(
+			() => {
+				notification.open({
+					message: "Thank you for your registration",
+					description: `You will be notified when we go LIVE on your mail id: "${value}"`,
+					icon: <LikeFilled style={{ color: "#00B8D4" }} />,
+					className: "notification-color",
+				});
+			},
+			() => {
+				console.log("Error: true");
+			}
+		);
 		this.formRef.current.resetFields();
-		notification.open({
-			message: "Thank you for your registration",
-			description: `You will be notified when we go LIVE on your mail id: "${value}"`,
-			icon: <LikeFilled style={{ color: "#00B8D4" }} />,
-			className: "notification-color",
-		});
-		return result;
 	};
 
 	render() {
 		return (
-			<div style={{ "text-align": "center" }}>
-				<h1 style={{ color: "white", padding: "25px 25px" }}>
-					Register with us
+			<div style={{ textAlign: "center" }} id="register">
+				<h1 style={{ color: "white", padding: "20px 0 20px 0" }}>
+					Get Early Access
 				</h1>
+				<p style={{ color: "white" }}>
+					You will get exclusive access to beta and main net once we are live
+				</p>
 				<Form
 					{...layout}
 					ref={this.formRef}
@@ -98,47 +105,39 @@ class Register extends React.Component {
 						type="primary"
 						htmlType="submit"
 						style={{ color: "black" }}
-						onclick="onSubmit()"
+						onClick="onSubmit()"
 					>
 						Submit
 					</Button>
 				</Form>
 				<h1 style={{ color: "white" }}>Follow us on Social Media</h1>
-				<a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-					<FacebookOutlined
-						style={{
-							"font-size": "50px",
-							color: "#18ffff",
-							padding: "0 10px 25px 10px",
-						}}
-					/>
-				</a>
-				<a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+				<a href="https://twitter.com/FananceC" target="_blank" rel="noreferrer">
 					<TwitterOutlined
 						style={{
-							"font-size": "50px",
+							fontSize: "50px",
 							color: "#18ffff",
 							padding: "0 10px 25px 10px",
 						}}
 					/>
 				</a>
-				<a href="https://www.instagram.com" target="_blank" rel="noreferrer">
-					<InstagramOutlined
+				<a
+					href="https://medium.com/@fanance.club"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<MediumOutlined
 						style={{
-							"font-size": "50px",
+							fontSize: "50px",
 							color: "#18ffff",
 							padding: "0 10px 25px 10px",
 						}}
 					/>
 				</a>
-				<a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-					<LinkedinOutlined
-						style={{
-							"font-size": "50px",
-							color: "#18ffff",
-							padding: "0 10px 25px 10px",
-						}}
-					/>
+				<a href="https://t.me/FananceClub" target="_blank" rel="noreferrer">
+					<i
+						className="fab fa-telegram"
+						style={{ fontSize: "50px", padding: "0 10px 25px 10px" }}
+					></i>
 				</a>
 			</div>
 		);

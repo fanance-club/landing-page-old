@@ -24,8 +24,13 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 60vh;
+	height: 50vh;
 	letter-spacing: 1px;
+}
+
+.hero-logo {
+	-webkit-filter: drop-shadow(5px 5px 5px #263238);
+	filter: drop-shadow(2px 2px 10px #263238);
 }
 
 .hero-brand {
@@ -38,14 +43,35 @@ body {
 	font-size: 100px;
 	line-height: 0.75;
 	margin: 10px 0;
-	font-weight: bold;
+	font-weight: 900;
 }
 
 @media only screen and (max-width: 768px) {
 	.hero-brand {
 		font-size: 60px;
 	}
+	.title {
+		height: 70vh;
+	}
 }
+
+.hero-sub-title {
+	animation: color-change 2s forwards;
+}
+
+@keyframes color-change {
+	0% {
+		opacity: 0;
+		transform: scale(2);
+		transition: all 0.3s ease-in-out 0.2s;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+		transition: all 0.3s ease-in-out 0.2s;
+	}
+}
+
 /* styling my button */
 
 .white-mode {
