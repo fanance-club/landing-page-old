@@ -2,7 +2,7 @@
 	"name": "fanance-homepage",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "http://raghu-19.github.io/personal-project-react",
+	"homepage": "https://www.fanance.club/",
 	"dependencies": {
 		"@ant-design/icons": "^4.3.0",
 		"@craco/craco": "^5.8.0",

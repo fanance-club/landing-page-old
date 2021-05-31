@@ -1,6 +1,16 @@
 import React from "react";
-import { Form, Input, Button, notification } from "antd";
+import {
+	Form,
+	Input,
+	Button,
+	notification,
+	Card,
+	Row,
+	Col,
+	Typography,
+} from "antd";
 import { MediumOutlined, TwitterOutlined, LikeFilled } from "@ant-design/icons";
+const { Title } = Typography;
 // import querystring from "querystring";
 // import https from "https";
 const layout = {
@@ -76,10 +86,10 @@ class Register extends React.Component {
 
 	render() {
 		return (
-			<div style={{ textAlign: "center" }} id="register">
-				<h1 style={{ color: "white", padding: "20px 0 20px 0" }}>
+			<div style={{ textAlign: "center" }} id="register" className="radialbg">
+				<Title style={{ color: "white", padding: "20px 0 20px 0" }}>
 					Get Early Access
-				</h1>
+				</Title>
 				<p style={{ color: "white" }}>
 					You will get exclusive access to beta and main net once we are live
 				</p>
@@ -110,35 +120,84 @@ class Register extends React.Component {
 						Submit
 					</Button>
 				</Form>
-				<h1 style={{ color: "white" }}>Follow us on Social Media</h1>
-				<a href="https://twitter.com/FananceC" target="_blank" rel="noreferrer">
-					<TwitterOutlined
-						style={{
-							fontSize: "50px",
-							color: "#18ffff",
-							padding: "0 10px 25px 10px",
-						}}
-					/>
-				</a>
-				<a
-					href="https://medium.com/@fanance.club"
-					target="_blank"
-					rel="noreferrer"
-				>
-					<MediumOutlined
-						style={{
-							fontSize: "50px",
-							color: "#18ffff",
-							padding: "0 10px 25px 10px",
-						}}
-					/>
-				</a>
-				<a href="https://t.me/FananceClub" target="_blank" rel="noreferrer">
-					<i
-						className="fab fa-telegram"
-						style={{ fontSize: "50px", padding: "0 10px 25px 10px" }}
-					></i>
-				</a>
+				<Title style={{ color: "#263238" }}>Follow us on Social Media</Title>
+				<Row justify="center">
+					<Col xs={18} sm={6} md={6} lg={6} xl={3} style={{ padding: "20px" }}>
+						<a
+							href="https://twitter.com/FananceClub"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<Card
+								bordered={false}
+								style={{ borderRadius: "12px", width: "100%" }}
+							>
+								<TwitterOutlined
+									style={{
+										fontSize: "50px",
+										color: "#18ffff",
+										padding: "0 10px 25px 10px",
+									}}
+								/>
+								<br></br>
+								<b>Twitter</b>
+								<br></br>
+								<span style={{ fontSize: "12px" }}>
+									Follow <b>@FananceClub</b> for news and updates
+								</span>
+							</Card>
+						</a>
+					</Col>
+					<Col xs={18} sm={6} md={6} lg={6} xl={3} style={{ padding: "20px" }}>
+						<a
+							href="https://medium.com/@fanance.club"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<Card
+								bordered={false}
+								style={{ borderRadius: "12px", width: "100%" }}
+							>
+								<MediumOutlined
+									style={{
+										fontSize: "50px",
+										color: "#18ffff",
+										padding: "0 10px 25px 10px",
+									}}
+								/>
+								<br></br>
+								<b>Medium</b>
+								<br></br>
+								<span style={{ fontSize: "12px" }}>
+									Follow <b>@fanance.club</b> for news and updates
+								</span>
+							</Card>
+						</a>
+					</Col>
+					<Col xs={18} sm={6} md={6} lg={6} xl={3} style={{ padding: "20px" }}>
+						<a href="https://t.me/FananceClub" target="_blank" rel="noreferrer">
+							<Card
+								bordered={false}
+								style={{ borderRadius: "12px", width: "100%" }}
+							>
+								<i
+									className="fab fa-telegram"
+									style={{
+										fontSize: "50px",
+										color: "#18ffff",
+										padding: "0 10px 25px 10px",
+									}}
+								></i>
+								<br></br>
+								<b>Telegram</b>
+								<br></br>
+								<span style={{ fontSize: "12px" }}>
+									Follow <b>@FananceClub</b> for community news and chat
+								</span>
+							</Card>
+						</a>
+					</Col>
+				</Row>
 			</div>
 		);
 	}
