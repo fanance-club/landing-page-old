@@ -9,11 +9,6 @@ import Register from "./Register.js";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-import ReactGA from "react-ga";
-
-const trackingId = "UA-198554307-1"; // Replace with your Google Analytics tracking ID
-ReactGA.initialize(trackingId);
-
 function App() {
 	return (
 		<div className="App">

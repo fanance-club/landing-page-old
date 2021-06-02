@@ -87,7 +87,7 @@ class Register extends React.Component {
 	render() {
 		return (
 			<div style={{ textAlign: "center" }} id="register" className="radialbg">
-				<Title style={{ color: "white", padding: "20px 0 20px 0" }}>
+				<Title style={{ color: "white", padding: "10px 0 10px 0" }}>
 					Get Early Access
 				</Title>
 				<p style={{ color: "white" }}>
@@ -130,7 +130,11 @@ class Register extends React.Component {
 						>
 							<Card
 								bordered={false}
-								style={{ borderRadius: "12px", width: "100%", backgroundColor:"#263238" }}
+								style={{
+									borderRadius: "12px",
+									width: "100%",
+									backgroundColor: "#263238",
+								}}
 							>
 								<TwitterOutlined
 									style={{
@@ -156,7 +160,11 @@ class Register extends React.Component {
 						>
 							<Card
 								bordered={false}
-								style={{ borderRadius: "12px", width: "100%", backgroundColor:"#263238"  }}
+								style={{
+									borderRadius: "12px",
+									width: "100%",
+									backgroundColor: "#263238",
+								}}
 							>
 								<MediumOutlined
 									style={{
@@ -178,7 +186,11 @@ class Register extends React.Component {
 						<a href="https://t.me/FananceClub" target="_blank" rel="noreferrer">
 							<Card
 								bordered={false}
-								style={{ borderRadius: "12px", width: "100%", backgroundColor:"#263238"  }}
+								style={{
+									borderRadius: "12px",
+									width: "100%",
+									backgroundColor: "#263238",
+								}}
 							>
 								<i
 									className="fab fa-telegram"

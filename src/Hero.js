@@ -10,7 +10,7 @@ function Hero() {
 						<img src="/logo.png" width="70%" className="hero-logo" />
 						<h2
 							className="hero-sub-title"
-							style={{  color: "black",textShadow:"10px 0px 10px #18ffff", }}
+							style={{  color: "white",textShadow:"0px 0px 3px black", }}
 						>
 							Finance for Fans
 						</h2>
