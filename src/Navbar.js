@@ -1,5 +1,4 @@
 import { Layout, Menu } from "antd";
-const { SubMenu } = Menu;
 const { Header } = Layout;
 
 const Navbar = () => {
@@ -12,26 +11,46 @@ const Navbar = () => {
 				boxShadow: "0px 1px 10px",
 			}}
 		>
-			<span className="logo">
-				<span style={{ padding: "0 25px 0 25px" }}>
+			<Menu
+				mode="horizontal"
+				style={{
+					float: "right",
+					backgroundColor: "#263238",
+					height: "64px",
+					borderColor: "#263238",
+				}}
+			>
+				<Menu.Item key="whitepaper">
 					<a
-						href="https://fanance-club.gitbook.io/fanance-club/lite-paper"
+						href="/whitepaper.pdf"
 						target="_blank"
-						rel="noreferrer"
+						rel="noopener noreferrer"
+						style={{ color: "#18ffff", fontWeight: "bold" }}
 					>
 						WHITEPAPER
 					</a>
-				</span>
-				<span style={{ padding: "0 25px 0 25px" }}>
+				</Menu.Item>
+				<Menu.Item key="litepaper">
+					<a
+						href="https://fanance-club.gitbook.io/fanance-club/lite-paper"
+						target="_blank"
+						rel="noopener noreferrer"
+						style={{ color: "#18ffff", fontWeight: "bold" }}
+					>
+						LITEPAPER
+					</a>
+				</Menu.Item>
+				<Menu.Item key="FAQ">
 					<a
 						href="https://fanance-club.gitbook.io/fanance-club/faqs"
 						target="_blank"
-						rel="noreferrer"
+						rel="noopener noreferrer"
+						style={{ color: "#18ffff", fontWeight: "bold" }}
 					>
 						FAQs
 					</a>
-				</span>
-			</span>
+				</Menu.Item>
+			</Menu>
 		</Header>
 	);
 };

@@ -1,17 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Graduate&display=swap");
 
-/* .hero-brand {
-	color: #ff9800;
-	text-shadow: 3px 5px 6px rgba(0, 0, 0, 0.8),
-		0px -5px 35px rgba(255, 255, 255, 0.8);
-	font-family: graduate;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 50vh;
-	font-size: 70px;
-} */
-
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 div.ant-card-body {
 	border-radius: 10px;
+	background-color: rgb(38, 50, 56, 0.5);
 }

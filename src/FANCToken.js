@@ -19,6 +19,7 @@ function FANCToken() {
 			justify="space-around"
 			align="middle"
 			// style={{ backgroundColor: "#ffebee" }}
+			id="fanc-token"
 		>
 			<Col xs={24} md={15} style={{ color: "white" }}>
 				<Title
@@ -49,7 +50,7 @@ function FANCToken() {
 					<List
 						size="small"
 						split={false}
-						style={{ padding: "0 20px 0 20px" }}
+						style={{ padding: "0 20px 0 20px", fontSize: "14px" }}
 						dataSource={data}
 						renderItem={(item) => (
 							<List.Item style={{ color: "white" }}>
@@ -64,28 +65,6 @@ function FANCToken() {
 				<img src="/token-distribution.png" width="100%" />
 			</Col>
 		</Row>
-		// <div style={{ textAlign: "center", color: "white" }}>
-		// 	<Title levle={2} style={{ color: "white" }}>
-		// 		ABOUT FANANCE CLUB
-		// 	</Title>
-		// 	<div
-		// 		className="site-layout-content"
-		// 		style={{ padding: "0 25px 0 25px", fontSize: "20px" }}
-		// 	>
-		// 		<p style={{ textAlign: "justify" }}>
-		// 			Fanance Club is a Revolutionary & Deflationary DeFi cum Fantasy Stocks
-		// 			trading platform powered by the Cardano blockchain where users can
-		// 			trade digital assets or celebrity stocks that represent real-life
-		// 			performance statistics. It is a decentralized social gaming/trading
-		// 			experience in which people can express their passion for sports/their
-		// 			favorite stars, compete against each other, and show{" "}
-		// 			<b>“How much your craze for your favorite stars is worth”</b>
-		// 		</p>
-		// 		<img src="/about-exchange.jpg" alt="Exchange" className="about-image" />
-		// 		<br></br>
-		// 		<br></br>
-		// 	</div>
-		// </div>
 	);
 }
 

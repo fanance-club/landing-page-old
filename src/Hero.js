@@ -42,7 +42,7 @@ function Hero() {
 					</div>
 				</Col>
 				<Col xs={24} sm={24} md={8} lg={8} xl={8}>
-					<Image className="hero-image" src="/soccer-hero.png" />
+					<img className="hero-image" src="/soccer-hero.png" />
 				</Col>
 			</Row>
 		</div>

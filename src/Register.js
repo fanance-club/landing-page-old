@@ -122,7 +122,7 @@ class Register extends React.Component {
 				</Form>
 				<Title style={{ color: "#263238" }}>Follow us on Social Media</Title>
 				<Row justify="center">
-					<Col xs={18} sm={6} md={6} lg={6} xl={3} style={{ padding: "20px" }}>
+					<Col xs={18} sm={6} md={8} lg={6} xl={4} style={{ padding: "20px" }}>
 						<a
 							href="https://twitter.com/FananceClub"
 							target="_blank"
@@ -130,7 +130,7 @@ class Register extends React.Component {
 						>
 							<Card
 								bordered={false}
-								style={{ borderRadius: "12px", width: "100%" }}
+								style={{ borderRadius: "12px", width: "100%", backgroundColor:"#263238" }}
 							>
 								<TwitterOutlined
 									style={{
@@ -148,7 +148,7 @@ class Register extends React.Component {
 							</Card>
 						</a>
 					</Col>
-					<Col xs={18} sm={6} md={6} lg={6} xl={3} style={{ padding: "20px" }}>
+					<Col xs={18} sm={6} md={8} lg={6} xl={4} style={{ padding: "20px" }}>
 						<a
 							href="https://medium.com/@fanance.club"
 							target="_blank"
@@ -156,7 +156,7 @@ class Register extends React.Component {
 						>
 							<Card
 								bordered={false}
-								style={{ borderRadius: "12px", width: "100%" }}
+								style={{ borderRadius: "12px", width: "100%", backgroundColor:"#263238"  }}
 							>
 								<MediumOutlined
 									style={{
@@ -174,11 +174,11 @@ class Register extends React.Component {
 							</Card>
 						</a>
 					</Col>
-					<Col xs={18} sm={6} md={6} lg={6} xl={3} style={{ padding: "20px" }}>
+					<Col xs={18} sm={6} md={8} lg={6} xl={4} style={{ padding: "20px" }}>
 						<a href="https://t.me/FananceClub" target="_blank" rel="noreferrer">
 							<Card
 								bordered={false}
-								style={{ borderRadius: "12px", width: "100%" }}
+								style={{ borderRadius: "12px", width: "100%", backgroundColor:"#263238"  }}
 							>
 								<i
 									className="fab fa-telegram"

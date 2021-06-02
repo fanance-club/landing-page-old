@@ -1,14 +1,5 @@
-import { Row, Col, Card, List, Timeline, Typography } from "antd";
+import { Timeline, Typography } from "antd";
 import "./features.css";
-import {
-	BgColorsOutlined,
-	DollarCircleOutlined,
-	SolutionOutlined,
-	ApiOutlined,
-	StarOutlined,
-	SwapOutlined,
-	ClockCircleFilled,
-} from "@ant-design/icons";
 const { Title } = Typography;
 function Features() {
 	return (
@@ -20,6 +11,7 @@ function Features() {
 				backgroundSize: "cover",
 				backgroundPosition: "bottom",
 			}}
+			id="roadmap"
 		>
 			<Title
 				style={{ color: "white", padding: "25px 25px", textAlign: "center" }}

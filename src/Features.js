@@ -13,21 +13,21 @@ const { Title } = Typography;
 const data = [
 	{
 		icon: <BgColorsOutlined />,
-		title: "Continuous Liquidity",
+		title: "AMM based Liquidity",
 		description:
-			"Fantasy stocks can be acquired and sold back at any time, managed by smart-contracts",
+			"Ability to buy and sell players anytime managed by smart-contracts - No more order books",
+	},
+	{
+		icon: <ApiOutlined />,
+		title: "Cardano Blockchain",
+		description:
+			"Fanance Club uses the Cardano blockchain to provide transparency, security, decentralization, AMM based liquidity and secure ownership",
 	},
 	{
 		icon: <SolutionOutlined />,
 		title: "Real-Life Performance",
 		description:
-			"Prices influenced by real life performance. Outsmart other users by leveraging your sports knowledge",
-	},
-	{
-		icon: <ApiOutlined />,
-		title: "Blockchain Technology",
-		description:
-			"Fanance Club uses the blockchain to provide transparency, decentralization, continuous liquidity and true digital ownership",
+			"Prices influenced by players' real life performance. Stay ahead of other users by leveraging your sports knowledge",
 	},
 	{
 		icon: <DollarCircleOutlined />,
@@ -57,29 +57,31 @@ function Features() {
 				textAlign: "center",
 				backgroundSize: "cover",
 				backgroundPosition: "bottom",
+				padding: "20px",
 			}}
+			id="features"
 		>
 			<Title style={{ color: "white", padding: "25px 25px 0 25px" }}>
 				FEATURES
 			</Title>
-			<List
-				grid={{
-					gutter: 16,
-					xs: 1,
-					sm: 2,
-					md: 3,
-					lg: 3,
-					xl: 3,
-					xxl: 3,
-				}}
-				dataSource={data}
-				renderItem={(item) => (
-					<List.Item>
-						<Card
-							bordered={false}
-							style={{ backgroundColor: "#18ffff", borderRadius: "12px" }}
-							hoverable={true}
-						>
+			<Card
+				bordered={false}
+				style={{ backgroundColor: "rgb(38,50,56,0.5", borderRadius: "12px" }}
+				hoverable={true}
+			>
+				<List
+					grid={{
+						gutter: 16,
+						xs: 1,
+						sm: 2,
+						md: 3,
+						lg: 3,
+						xl: 3,
+						xxl: 3,
+					}}
+					dataSource={data}
+					renderItem={(item) => (
+						<List.Item>
 							<Row
 								justify="space-around"
 								align="middle"
@@ -96,11 +98,12 @@ function Features() {
 									<span style={{ color: "white" }}>{item.description}</span>
 								</Col>
 							</Row>
-						</Card>
-					</List.Item>
-				)}
-				style={{ padding: "20px" }}
-			/>
+						</List.Item>
+					)}
+					style={{ padding: "10px" }}
+				/>
+			</Card>
+			<br></br>
 		</div>
 	);
 }
