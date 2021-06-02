@@ -50,7 +50,7 @@ function FANCToken() {
 					<List
 						size="small"
 						split={false}
-						style={{ padding: "0 20px 0 20px", fontSize: "14px" }}
+						style={{ fontSize: "14px" }}
 						dataSource={data}
 						renderItem={(item) => (
 							<List.Item style={{ color: "white" }}>

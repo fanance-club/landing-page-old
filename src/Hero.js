@@ -1,23 +1,25 @@
-import { Image, Row, Col, Button } from "antd";
+import { Row, Col, Button } from "antd";
 import "./hero.css";
 
 function Hero() {
 	return (
 		<div className="hero">
-			<Row>
+			<Row justify="space-around" align="middle">
 				<Col xs={24} sm={24} md={16} lg={16} xl={16}>
 					<div className="title">
 						<img src="/logo.png" width="70%" className="hero-logo" />
 						<h2
 							className="hero-sub-title"
-							style={{ fontSize: "30px", color: "black" }}
+							style={{  color: "black",textShadow:"10px 0px 10px #18ffff", }}
 						>
 							Finance for Fans
 						</h2>
 						<h2
 							style={{
-								fontSize: "20px",
-								color: "black",
+								color: "white",
+								fontWeight: "bold",
+								textShadow:"1px 1px 5px #263238",
+								textAlign:"center"
 							}}
 							className="hero-text"
 						>

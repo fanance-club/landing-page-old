@@ -45,7 +45,7 @@ function DAPP() {
 				</Row>
 			</Col>
 			<Col xs={24} md={24} style={{ textAlign: "center" }}>
-				<img src="/user-flow.png" width="70%" />
+				<img src="/user-flow.png" className="dapp-image-width" />
 			</Col>
 		</Row>
 	);

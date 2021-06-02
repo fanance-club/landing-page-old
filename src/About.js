@@ -22,7 +22,7 @@ function About() {
 					className="site-layout-content"
 					style={{ padding: "0 10px 0 10px", fontSize: "20px" }}
 				>
-					<p style={{ textAlign: "justify", padding: "0 50px 0 50px" }}>
+					<p style={{ textAlign: "justify"}} className="large-padding">
 						Fanance Club is a Revolutionary & Deflationary DeFi cum Fantasy
 						Stocks trading platform powered by the Cardano blockchain where
 						users can trade digital assets or celebrity stocks that represent
