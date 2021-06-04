@@ -183,7 +183,11 @@ class Register extends React.Component {
 						</a>
 					</Col>
 					<Col xs={18} sm={6} md={8} lg={6} xl={4} style={{ padding: "20px" }}>
-						<a href="https://t.me/FananceClub" target="_blank" rel="noreferrer">
+						<a
+							href="https://t.me/joinchat/GvXGaMREKNcwjqsw"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<Card
 								bordered={false}
 								style={{
