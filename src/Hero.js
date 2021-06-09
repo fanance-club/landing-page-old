@@ -301,14 +301,16 @@ function Hero(props) {
 							will be checked by our backend API at TGE
 							<br />
 						</span>
-						<Button
-							type="primary"
-							style={{ color: "#273238" }}
-							onClick={() => enrollUser(query.get("referrer"))}
-							size="large"
-						>
-							Submit Airdrop entry
-						</Button>
+						<p style={{ textAlign: "center" }}>
+							<Button
+								type="primary"
+								style={{ color: "#273238" }}
+								onClick={() => enrollUser(query.get("referrer"))}
+								size="large"
+							>
+								Submit Airdrop entry
+							</Button>
+						</p>
 						<p id="submissionError" style={{ color: "red" }}></p>
 						<p>You have earned 10 $FANC Tokens!</p>
 						<p>
