@@ -9,17 +9,27 @@ import {
 	Checkbox,
 	message,
 } from "antd";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./hero.css";
 import Sidebar from "./Drawer";
 import { useLocation } from "react-router-dom";
-import { TwitterOutlined } from "@ant-design/icons";
+import { TwitterOutlined, GoogleOutlined } from "@ant-design/icons";
 import firebase from "./firebase";
+import { TwitterTweetEmbed, TwitterFollowButton } from "react-twitter-embed";
 import {
-	TwitterTweetEmbed,
+	FacebookIcon,
+	TwitterIcon,
+	LinkedinIcon,
+	TelegramIcon,
+	RedditIcon,
+	WhatsappIcon,
+	FacebookShareButton,
+	LinkedinShareButton,
+	TelegramShareButton,
+	RedditShareButton,
 	TwitterShareButton,
-	TwitterFollowButton,
-} from "react-twitter-embed";
+	WhatsappShareButton,
+} from "react-share";
 const { Title } = Typography;
 
 const useQuery = () => {
@@ -33,6 +43,7 @@ function Hero(props) {
 	const [telegram1, setTelegram1] = useState(false);
 	const [twitterHandle, setTwitterHandle] = useState("");
 	const [telegramHandle, setTelegramHandle] = useState("");
+	const [userDetails, setUserDetails] = useState(null);
 	const setTwitter1State = () => {
 		setTwitter1(!twitter1);
 	};
@@ -55,6 +66,25 @@ function Hero(props) {
 	const onClose = () => {
 		setVisible(false);
 	};
+	useEffect(() => {
+		const db = firebase.firestore();
+		if (props.user) {
+			db.collection("users")
+				.doc(props.user.uid)
+				.get()
+				.then((doc) => {
+					if (doc.exists) {
+						setUserDetails(doc.data());
+					} else {
+						// doc.data() will be undefined in this case
+						console.log("No such document!");
+					}
+				})
+				.catch((error) => {
+					console.log("Error getting document:", error);
+				});
+		}
+	}, [props.user, userDetails]);
 	const onSubmit = () => {
 		var provider = new firebase.auth.GoogleAuthProvider();
 		firebase
@@ -100,11 +130,13 @@ function Hero(props) {
 					.then((doc) => {
 						if (doc.exists) {
 							db.collection("users")
-								.doc(props.user.uid)
+								.doc(referrer)
 								.set(
 									{
-										referrees: [...doc.referrees, props.user.uid],
-										tokenBalance: doc.tokenBalance + 20,
+										referrees: firebase.firestore.FieldValue.arrayUnion(
+											props.user.uid
+										),
+										tokenBalance: firebase.firestore.FieldValue.increment(20),
 									},
 									{ merge: true }
 								);
@@ -130,7 +162,8 @@ function Hero(props) {
 					tokenBalance: 20,
 					twitterId: document.getElementById("twitter").value,
 				})
-				.then(() => {
+				.then((userDetails) => {
+					setUserDetails(userDetails);
 					message.success("Airdrop registration successful");
 				})
 				.catch((error) => {
@@ -142,8 +175,13 @@ function Hero(props) {
 			);
 		}
 	};
+	const copyToClipBoard = (text) => {
+		navigator.clipboard.writeText(text);
+		message.success("Referral link copied to clipboard");
+	};
 	let query = useQuery();
-	console.log(props.user);
+	const twitterHashtags = ["Airdrop", "FananceClub", "DeFi", "Cardano"];
+
 	return (
 		<div className="hero">
 			<Row justify="space-around" align="middle">
@@ -201,140 +239,249 @@ function Hero(props) {
 						<Title style={{ color: "white", textAlign: "center" }}>
 							DASHBOARD
 						</Title>
-						<p>Dear {props.user.displayName},</p>
-						<p>
-							To avail your Joining Bonus of 20 $FANC, complete the below tasks:
-						</p>
-						<Divider orientation="left" style={{ color: "white" }}>
-							Twitter
-						</Divider>
-						1. Follow{" "}
-						<a
-							href="https://twitter.com/FananceClub"
-							target="_blank"
-							rel="noreferrer"
-						>
-							@FananceClub
-						</a>{" "}
-						on Twitter
-						<br />
-						<br />
-						<TwitterFollowButton
-							screenName="FananceClub"
-							options={{ size: "large" }}
-						/>
-						2. Retweet the below tweet on Twitter (Click on the tweet or click
-						this{" "}
-						<a
-							href="https://twitter.com/FananceClub/status/1400443616145801219"
-							target="_blank"
-							rel="noreferrer"
-						>
-							link
-						</a>{" "}
-						and Retweet)
-						<div className="centerContent">
-							<div className="selfCenter">
-								<TwitterTweetEmbed tweetId="1400443616145801219" />
-							</div>
-						</div>
-						<p>3. Enter your twitter handle below:</p>
-						<Input
-							placeholder="Twitter handle"
-							prefix={<TwitterOutlined />}
-							id="twitter"
-							value={twitterHandle}
-							onChange={setTwitterHandleStatus}
-						/>
-						<Divider orientation="left" style={{ color: "white" }}>
-							Telegram
-						</Divider>
-						1. Join our Telegram channel for discussions and announcements
-						<br />
-						<br />
-						<a
-							href="https://t.me/FananceClubChat"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<Button type="primary" style={{ color: "#273238" }}>
-								Follow on Telegram
-							</Button>
-						</a>
-						<p>2. Enter your Telegram username below:</p>
-						<Input
-							placeholder="Telegram username"
-							id="telegram"
-							value={telegramHandle}
-							onChange={setTelegramHandleStatus}
-						/>
-						<Divider orientation="left" style={{ color: "white" }}>
-							Checklist
-						</Divider>
-						<Checkbox
-							id="twitter1"
-							style={{ color: "white" }}
-							onChange={setTwitter1State}
-						>
-							Followed @FananceClub on Twitter
-						</Checkbox>
-						<br />
-						<Checkbox
-							id="twitter2"
-							style={{ color: "white" }}
-							onChange={setTwitter2State}
-						>
-							Retweeted the above tweet
-						</Checkbox>
-						<br />
-						<Checkbox
-							id="telegram1"
-							style={{ color: "white" }}
-							onChange={setTelegram1State}
-						>
-							Joined Telegram channel
-						</Checkbox>
-						<br />
-						<br />
-						<span style={{ fontSize: "12px" }}>
-							* - Please note that your twitter retweet and telegram join status
-							will be checked by our backend API at TGE
-							<br />
-						</span>
-						<p style={{ textAlign: "center" }}>
-							<Button
-								type="primary"
-								style={{ color: "#273238" }}
-								onClick={() => enrollUser(query.get("referrer"))}
-								size="large"
-							>
-								Submit Airdrop entry
-							</Button>
-						</p>
-						<p id="submissionError" style={{ color: "red" }}></p>
-						<p>You have earned 10 $FANC Tokens!</p>
-						<p>
-							For Every Successful referral ( Referral should Signin and
-							complete the retweet step ) you will earn 10 $FANC
-						</p>
-						<p>To earn more $FANC, share your Referral Link with others:</p>
-						<p>https://fanance.club/invite/sathd6b1ba</p>
-						<p>Social Sharing icons</p>
-						<Button
-							type="primary"
-							onClick={signOut}
-							style={{ color: "#273238" }}
-						>
-							Sign Out
-						</Button>
+						{userDetails == null ? (
+							<>
+								<p>Dear {props.user.displayName},</p>
+								<p>
+									To avail your Joining Bonus of 20 $FANC, complete the below
+									tasks:
+								</p>
+								<Divider orientation="left" style={{ color: "white" }}>
+									Twitter
+								</Divider>
+								1. Follow{" "}
+								<a
+									href="https://twitter.com/FananceClub"
+									target="_blank"
+									rel="noreferrer"
+								>
+									@FananceClub
+								</a>{" "}
+								on Twitter
+								<br />
+								<br />
+								<TwitterFollowButton
+									screenName="FananceClub"
+									options={{ size: "large" }}
+								/>
+								2. Retweet the below tweet on Twitter (Click on the tweet or
+								click this{" "}
+								<a
+									href="https://twitter.com/FananceClub/status/1402537311930257412"
+									target="_blank"
+									rel="noreferrer"
+								>
+									link
+								</a>{" "}
+								and Retweet)
+								<div className="centerContent">
+									<div className="selfCenter">
+										<TwitterTweetEmbed tweetId="1402537311930257412" />
+									</div>
+								</div>
+								<p>3. Enter your twitter handle below:</p>
+								<Input
+									placeholder="Twitter handle"
+									prefix={<TwitterOutlined />}
+									id="twitter"
+									value={twitterHandle}
+									onChange={setTwitterHandleStatus}
+								/>
+								<Divider orientation="left" style={{ color: "white" }}>
+									Telegram
+								</Divider>
+								1. Join our Telegram channel for discussions and announcements
+								<br />
+								<br />
+								<a
+									href="https://t.me/FananceClubChat"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<Button
+										type="primary"
+										style={{ color: "#273238" }}
+										shape="round"
+									>
+										Follow on Telegram
+									</Button>
+								</a>
+								<p>2. Enter your Telegram username below:</p>
+								<Input
+									placeholder="Telegram username"
+									id="telegram"
+									value={telegramHandle}
+									onChange={setTelegramHandleStatus}
+								/>
+								<Divider orientation="left" style={{ color: "white" }}>
+									Checklist
+								</Divider>
+								<Checkbox
+									id="twitter1"
+									style={{ color: "white" }}
+									onChange={setTwitter1State}
+								>
+									Followed @FananceClub on Twitter
+								</Checkbox>
+								<br />
+								<Checkbox
+									id="twitter2"
+									style={{ color: "white" }}
+									onChange={setTwitter2State}
+								>
+									Retweeted the above tweet
+								</Checkbox>
+								<br />
+								<Checkbox
+									id="telegram1"
+									style={{ color: "white" }}
+									onChange={setTelegram1State}
+								>
+									Joined Telegram channel
+								</Checkbox>
+								<br />
+								<br />
+								<span style={{ fontSize: "12px" }}>
+									* - Please note that your twitter retweet and telegram join
+									status will be checked by our backend API at TGE
+									<br />
+								</span>
+								<p style={{ textAlign: "center" }}>
+									<Button
+										type="primary"
+										style={{ color: "#273238" }}
+										onClick={() => enrollUser(query.get("referrer"))}
+										size="large"
+										shape="round"
+									>
+										Submit Airdrop entry
+									</Button>
+								</p>
+								<p id="submissionError" style={{ color: "red" }}></p>
+							</>
+						) : (
+							<>
+								<p style={{ textAlign: "center" }}>
+									<Title level={3} style={{ color: "white" }}>
+										Congrats, {props.user.displayName}
+									</Title>
+									<br />
+									<img src="./celebration.png" width="30%" alt="celebration" />
+									<Title level={4} style={{ color: "white" }}>
+										Your token balance is{" "}
+										<b style={{ color: "#18ffff" }}>
+											{userDetails.tokenBalance}
+										</b>{" "}
+										$FANC
+									</Title>
+								</p>
+								<Title level={4} style={{ color: "white" }}>
+									Earn more by referrals !!
+								</Title>
+								<p>
+									For Every Successful referral ( Referral should Signin and
+									complete the steps ) you will earn 20 $FANC
+								</p>
+								<p>To earn more $FANC, share your Referral Link with others:</p>
+								<p
+									style={{
+										borderStyle: "solid",
+										padding: "10px",
+										borderColor: "#18ffff",
+										borderRadius: "10px",
+										fontWeight: "bold",
+									}}
+								>
+									https://fanance.club/?referrer={props.user.uid}
+								</p>
+								<Button
+									type="primary"
+									size="small"
+									onClick={() =>
+										copyToClipBoard(
+											`https://fanance.club/?referrer=${props.user.uid}`
+										)
+									}
+									style={{ color: "#273238" }}
+									shape="round"
+								>
+									Copy to clipboard
+								</Button>
+								<br />
+								<br />
+								<Title level={4} style={{ color: "white" }}>
+									Share referral link to your network
+								</Title>
+								<FacebookShareButton
+									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									quote="Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
+									hashtag="#Airdrop #FananceClub #DeFi"
+								>
+									<FacebookIcon size={40} round={true} />
+								</FacebookShareButton>{" "}
+								<TwitterShareButton
+									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									title={
+										"Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
+									}
+									via={"FananceClub"}
+									hashtags={twitterHashtags}
+								>
+									<TwitterIcon size={40} round={true} />
+								</TwitterShareButton>{" "}
+								<LinkedinShareButton
+									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									title="Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
+								>
+									<LinkedinIcon size={40} round={true} />
+								</LinkedinShareButton>{" "}
+								<RedditShareButton
+									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									title={
+										"Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
+									}
+								>
+									<RedditIcon size={40} round={true} />
+								</RedditShareButton>{" "}
+								<WhatsappShareButton
+									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									title={
+										"Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
+									}
+								>
+									<WhatsappIcon size={40} round={true} />
+								</WhatsappShareButton>{" "}
+								<TelegramShareButton
+									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									title={
+										"Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
+									}
+								>
+									<TelegramIcon size={40} round={true} />
+								</TelegramShareButton>
+								<br />
+								<br />
+								<Button
+									type="primary"
+									onClick={signOut}
+									style={{ color: "#273238" }}
+									shape="round"
+								>
+									Sign Out
+								</Button>
+							</>
+						)}
 					</>
 				) : (
 					<>
 						<Title style={{ color: "white", textAlign: "center" }}>
 							AIRDROP
 						</Title>
-						<p style={{ marginTop: "30vh" }}>
-							<p>
+						<p style={{ textAlign: "center" }}>
+							<img src="./airdrop.png" width="30%" alt="celebration" />
+							<br />
+							<br />
+							<p style={{ textAlign: "center", fontSize: "20px" }}>
 								Login to avail 20 $FANC Airdrop, to join Fanance Club Referral
 								Program and get early access to $FANC Token Sale
 							</p>
@@ -344,6 +491,8 @@ function Hero(props) {
 									onClick={onSubmit}
 									size="large"
 									style={{ color: "#273238" }}
+									icon={<GoogleOutlined />}
+									shape="round"
 								>
 									Login with Google
 								</Button>
