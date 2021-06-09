@@ -296,6 +296,11 @@ function Hero(props) {
 						</Checkbox>
 						<br />
 						<br />
+						<span style={{ fontSize: "12px" }}>
+							* - Please note that your twitter retweet and telegram join status
+							will be checked by our backend API at TGE
+							<br />
+						</span>
 						<Button
 							type="primary"
 							style={{ color: "#273238" }}
