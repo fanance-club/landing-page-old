@@ -27,8 +27,8 @@ function Features() {
 						Idea Conceptualization<br></br>Market Research
 					</Timeline.Item>
 					<Timeline.Item label="Q1 2021" color="green">
-						Built Beta/MVP in ETH testnet ( Only or Development / Testing
-						purpose)
+						Built and tested few key modules in Ethereum Rinkeby Testnet
+						<br></br>(Only for Testing purposes)
 					</Timeline.Item>
 					<Timeline.Item label="Q2 2021" color="yellow">
 						Website Launch

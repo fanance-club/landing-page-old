@@ -87,40 +87,7 @@ class Register extends React.Component {
 	render() {
 		return (
 			<div style={{ textAlign: "center" }} id="register" className="radialbg">
-				<Title style={{ color: "white", padding: "10px 0 10px 0" }}>
-					Get Early Access
-				</Title>
-				<p style={{ color: "white" }}>
-					You will get exclusive access to beta and main net once we are live
-				</p>
-				<Form
-					{...layout}
-					ref={this.formRef}
-					name="control-ref"
-					onFinish={this.onSubmit}
-					style={{ padding: "0 10% 25px 10%" }}
-				>
-					<Form.Item
-						name="email"
-						label="Email"
-						rules={[
-							{
-								required: true,
-							},
-						]}
-					>
-						<Input id="email" />
-					</Form.Item>
-					<Button
-						type="primary"
-						htmlType="submit"
-						style={{ color: "black" }}
-						onClick="onSubmit()"
-					>
-						Submit
-					</Button>
-				</Form>
-				<Title style={{ color: "#263238" }}>Follow us on Social Media</Title>
+				<Title style={{ color: "white", padding:"20px 0 0 0" }}>Follow us on Social Media</Title>
 				<Row justify="center">
 					<Col xs={18} sm={6} md={8} lg={6} xl={4} style={{ padding: "20px" }}>
 						<a
@@ -154,7 +121,7 @@ class Register extends React.Component {
 					</Col>
 					<Col xs={18} sm={6} md={8} lg={6} xl={4} style={{ padding: "20px" }}>
 						<a
-							href="https://medium.com/@fanance.club"
+							href="https://fananceclub.medium.com/"
 							target="_blank"
 							rel="noreferrer"
 						>
@@ -184,7 +151,7 @@ class Register extends React.Component {
 					</Col>
 					<Col xs={18} sm={6} md={8} lg={6} xl={4} style={{ padding: "20px" }}>
 						<a
-							href="https://t.me/joinchat/GvXGaMREKNcwjqsw"
+							href="https://t.me/FananceClubChat"
 							target="_blank"
 							rel="noreferrer"
 						>
