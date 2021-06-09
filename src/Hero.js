@@ -11,7 +11,6 @@ import {
 } from "antd";
 import React, { useState, useEffect } from "react";
 import "./hero.css";
-import Sidebar from "./Drawer";
 import { useLocation } from "react-router-dom";
 import { TwitterOutlined, GoogleOutlined } from "@ant-design/icons";
 import firebase from "./firebase";
@@ -84,7 +83,7 @@ function Hero(props) {
 					console.log("Error getting document:", error);
 				});
 		}
-	}, [props.user, userDetails]);
+	}, [firebase.auth(), props.user, userDetails]);
 	const onSubmit = () => {
 		var provider = new firebase.auth.GoogleAuthProvider();
 		firebase
@@ -110,7 +109,7 @@ function Hero(props) {
 			.auth()
 			.signOut()
 			.then(() => {
-				console.log("Signed Out");
+				setUserDetails(null);
 			});
 	};
 	const enrollUser = (referrer) => {
@@ -136,7 +135,7 @@ function Hero(props) {
 										referrees: firebase.firestore.FieldValue.arrayUnion(
 											props.user.uid
 										),
-										tokenBalance: firebase.firestore.FieldValue.increment(20),
+										tokenBalance: firebase.firestore.FieldValue.increment(10),
 									},
 									{ merge: true }
 								);
@@ -187,7 +186,7 @@ function Hero(props) {
 			<Row justify="space-around" align="middle">
 				<Col xs={24} sm={24} md={16} lg={16} xl={16}>
 					<div className="title">
-						<img src="/logo.png" width="70%" className="hero-logo" />
+						<img src="/logo.png" width="70%" className="hero-logo" alt="logo" />
 						<h2
 							className="hero-sub-title"
 							style={{ color: "white", textShadow: "0px 0px 3px black" }}
@@ -218,12 +217,27 @@ function Hero(props) {
 							}}
 							onClick={showDrawer}
 						>
-							{props.user ? "DASHBOARD" : "AIRDROP"}
+							{props.user ? "DASHBOARD" : "REGISTER"}
 						</Button>
+						<h5
+							style={{
+								color: "white",
+								fontWeight: "bold",
+								textShadow: "1px 1px 5px #263238",
+								textAlign: "center",
+							}}
+						>
+							Login to avail 20 $FANC Airdrop, to join Fanance Club Referral
+							Program and get early access to $FANC Token Sale
+						</h5>
 					</div>
 				</Col>
 				<Col xs={24} sm={24} md={8} lg={8} xl={8}>
-					<img className="hero-image" src="/soccer-hero.png" />
+					<img
+						className="hero-image"
+						src="/soccer-hero.png"
+						alt="soccer-player"
+					/>
 				</Col>
 			</Row>
 			<Drawer
@@ -264,8 +278,8 @@ function Hero(props) {
 									screenName="FananceClub"
 									options={{ size: "large" }}
 								/>
-								2. Retweet the below tweet on Twitter (Click on the tweet or
-								click this{" "}
+								2. Like and Retweet the below tweet on Twitter (Click on the
+								tweet or click this{" "}
 								<a
 									href="https://twitter.com/FananceClub/status/1402537311930257412"
 									target="_blank"
@@ -329,7 +343,7 @@ function Hero(props) {
 									style={{ color: "white" }}
 									onChange={setTwitter2State}
 								>
-									Retweeted the above tweet
+									Liked and Retweeted the above tweet
 								</Checkbox>
 								<br />
 								<Checkbox
@@ -374,13 +388,20 @@ function Hero(props) {
 										</b>{" "}
 										$FANC
 									</Title>
+									<Title level={5} style={{ color: "white" }}>
+										Number of successful referrals -{" "}
+										<b style={{ color: "#18ffff" }}>
+											{userDetails.referrees.length}
+										</b>
+									</Title>
 								</p>
+								<Divider />
 								<Title level={4} style={{ color: "white" }}>
 									Earn more by referrals !!
 								</Title>
 								<p>
 									For Every Successful referral ( Referral should Signin and
-									complete the steps ) you will earn 20 $FANC
+									complete the steps ) you will earn 10 $FANC
 								</p>
 								<p>To earn more $FANC, share your Referral Link with others:</p>
 								<p
@@ -412,53 +433,53 @@ function Hero(props) {
 								<Title level={4} style={{ color: "white" }}>
 									Share referral link to your network
 								</Title>
-								<FacebookShareButton
-									url={`https://fanance.club/?referrer=${props.user.uid}`}
-									quote="Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
-									hashtag="#Airdrop #FananceClub #DeFi"
-								>
-									<FacebookIcon size={40} round={true} />
-								</FacebookShareButton>{" "}
 								<TwitterShareButton
 									url={`https://fanance.club/?referrer=${props.user.uid}`}
 									title={
-										"Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
+										"Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
 									}
 									via={"FananceClub"}
 									hashtags={twitterHashtags}
 								>
 									<TwitterIcon size={40} round={true} />
 								</TwitterShareButton>{" "}
-								<LinkedinShareButton
+								<TelegramShareButton
 									url={`https://fanance.club/?referrer=${props.user.uid}`}
-									title="Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
+									title={
+										"Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
+									}
 								>
-									<LinkedinIcon size={40} round={true} />
-								</LinkedinShareButton>{" "}
+									<TelegramIcon size={40} round={true} />
+								</TelegramShareButton>{" "}
 								<RedditShareButton
 									url={`https://fanance.club/?referrer=${props.user.uid}`}
 									title={
-										"Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
+										"Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
 									}
 								>
 									<RedditIcon size={40} round={true} />
 								</RedditShareButton>{" "}
+								<FacebookShareButton
+									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									quote="Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
+									hashtag="#Airdrop #FananceClub #DeFi"
+								>
+									<FacebookIcon size={40} round={true} />
+								</FacebookShareButton>{" "}
+								<LinkedinShareButton
+									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									title="Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
+								>
+									<LinkedinIcon size={40} round={true} />
+								</LinkedinShareButton>{" "}
 								<WhatsappShareButton
 									url={`https://fanance.club/?referrer=${props.user.uid}`}
 									title={
-										"Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
+										"Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
 									}
 								>
 									<WhatsappIcon size={40} round={true} />
-								</WhatsappShareButton>{" "}
-								<TelegramShareButton
-									url={`https://fanance.club/?referrer=${props.user.uid}`}
-									title={
-										"Participate in Fanance Club Airdrop and earn $20 FANC and more !!!"
-									}
-								>
-									<TelegramIcon size={40} round={true} />
-								</TelegramShareButton>
+								</WhatsappShareButton>
 								<br />
 								<br />
 								<Button
@@ -500,6 +521,21 @@ function Hero(props) {
 						</p>
 					</>
 				)}
+				<Divider />
+				<Title level={3} style={{ textAlign: "center", color: "white" }}>
+					🔥 Mother of all Airdrops !!! 🔥
+				</Title>
+				<Title level={5} style={{ textAlign: "center", color: "white" }}>
+					50 eligible winners will get 2000 $FANC tokens each
+				</Title>
+				<p style={{ padding: "15px" }}>
+					⚽ Total Number of winners - 50
+					<br />
+					⚽ 30 - Top 30 with highest number of referrals
+					<br />
+					⚽ 10 - Lucky draw from the first 500 registrations
+					<br />⚽ 10 - Lucky draw from all who did at least 5 referrals
+				</p>
 			</Drawer>
 		</div>
 	);

@@ -13,7 +13,7 @@ import firebase from "./firebase";
 import queryString from "query-string";
 
 import { BrowserRouter as Router } from "react-router-dom";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 firebase.auth().onAuthStateChanged(function (user) {
 	if (user) {
@@ -21,21 +21,20 @@ firebase.auth().onAuthStateChanged(function (user) {
 	} else {
 		console.log("No User signed in");
 	}
-	
 });
 
 function App() {
-	const [user,setUser] = useState(0);
-	useEffect(()=>{
-		firebase.auth().onAuthStateChanged((user)=>{
+	const [user, setUser] = useState(0);
+	useEffect(() => {
+		firebase.auth().onAuthStateChanged((user) => {
 			setUser(user);
-		})
-	},[firebase.auth()])
+		});
+	}, [firebase.auth()]);
 	return (
 		<Router>
 			<div className="App">
 				<Navbar />
-				<Hero user={user}/>
+				<Hero user={user} />
 				<About />
 				<DAPP />
 				<Features />
