@@ -60,17 +60,6 @@ function FooterContent() {
 							>
 								FAQs
 							</a>
-							<br></br>
-							<a href="#about-us">About Us</a>
-						</Col>
-						<Col xs={24} sm={12} md={12} lg={12}>
-							<a href="#dapp">dAPP</a>
-							<br></br>
-							<a href="#features">Features</a>
-							<br></br>
-							<a href="#fanc-token">FANC Token</a>
-							<br></br>
-							<a href="#roadmap">Roadmap</a>
 						</Col>
 					</Row>
 				</Col>
