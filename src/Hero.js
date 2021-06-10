@@ -83,7 +83,7 @@ function Hero(props) {
 					console.log("Error getting document:", error);
 				});
 		}
-	}, [firebase.auth(), props.user, userDetails]);
+	}, [firebase.auth(), props.user]);
 	const onSubmit = () => {
 		var provider = new firebase.auth.GoogleAuthProvider();
 		firebase
@@ -110,6 +110,11 @@ function Hero(props) {
 			.signOut()
 			.then(() => {
 				setUserDetails(null);
+				setTwitter1(false);
+				setTwitter2(false);
+				setTelegram1(false);
+				setTwitterHandle("");
+				setTelegramHandle("");
 			});
 	};
 	const enrollUser = (referrer) => {
@@ -161,8 +166,22 @@ function Hero(props) {
 					tokenBalance: 20,
 					twitterId: document.getElementById("twitter").value,
 				})
-				.then((userDetails) => {
-					setUserDetails(userDetails);
+				.then(() => {
+					var ref = db.collection("users").doc(props.user.uid);
+
+					ref
+						.get()
+						.then((doc) => {
+							if (doc.exists) {
+								setUserDetails(doc.data());
+							} else {
+								// doc.data() will be undefined in this case
+								console.log("No such document!");
+							}
+						})
+						.catch((error) => {
+							console.log("Error getting document:", error);
+						});
 					message.success("Airdrop registration successful");
 				})
 				.catch((error) => {
@@ -219,17 +238,24 @@ function Hero(props) {
 						>
 							{props.user ? "DASHBOARD" : "REGISTER"}
 						</Button>
-						<h5
-							style={{
-								color: "white",
-								fontWeight: "bold",
-								textShadow: "1px 1px 5px #263238",
-								textAlign: "center",
-							}}
-						>
-							Login to avail 20 $FANC Airdrop, to join Fanance Club Referral
-							Program and get early access to $FANC Token Sale
-						</h5>
+						{props.user ? (
+							""
+						) : (
+							<>
+								<h5
+									style={{
+										color: "white",
+										fontWeight: "bold",
+										textShadow: "1px 1px 5px #263238",
+										textAlign: "center",
+									}}
+								>
+									⚽ Login to avail 20 $FANC Airdrop
+									<br />⚽ to join Fanance Club Referral Program and
+									<br />⚽ to get early access to $FANC Token Sale
+								</h5>
+							</>
+						)}
 					</div>
 				</Col>
 				<Col xs={24} sm={24} md={8} lg={8} xl={8}>
@@ -369,7 +395,15 @@ function Hero(props) {
 										shape="round"
 									>
 										Submit Airdrop entry
-									</Button>
+									</Button><br /><br />
+									<Button
+									type="primary"
+									onClick={signOut}
+									style={{ color: "#273238" }}
+									shape="round"
+								>
+									Sign Out
+								</Button>
 								</p>
 								<p id="submissionError" style={{ color: "red" }}></p>
 							</>
@@ -503,8 +537,9 @@ function Hero(props) {
 							<br />
 							<br />
 							<p style={{ textAlign: "center", fontSize: "20px" }}>
-								Login to avail 20 $FANC Airdrop, to join Fanance Club Referral
-								Program and get early access to $FANC Token Sale
+								⚽ Login to avail 20 $FANC Airdrop
+								<br />⚽ to join Fanance Club Referral Program and
+								<br />⚽ to get early access to $FANC Token Sale
 							</p>
 							<p style={{ textAlign: "center" }}>
 								<Button
@@ -524,6 +559,9 @@ function Hero(props) {
 				<Divider />
 				<Title level={3} style={{ textAlign: "center", color: "white" }}>
 					🔥 Mother of all Airdrops !!! 🔥
+				</Title>
+				<Title level={5} style={{ textAlign: "center", color: "white" }}>
+					A total of 100,000 $FANC to be won
 				</Title>
 				<Title level={5} style={{ textAlign: "center", color: "white" }}>
 					50 eligible winners will get 2000 $FANC tokens each
