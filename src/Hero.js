@@ -307,7 +307,7 @@ function Hero(props) {
 								2. Like, Retweet and Tag 3 friends in the below tweet on Twitter
 								(Click on the tweet or click this{" "}
 								<a
-									href="https://twitter.com/FananceClub/status/1402537311930257412"
+									href="https://twitter.com/FananceClub/status/1403402661873872900"
 									target="_blank"
 									rel="noreferrer"
 								>
@@ -316,7 +316,7 @@ function Hero(props) {
 								and Retweet)
 								<div className="centerContent">
 									<div className="selfCenter">
-										<TwitterTweetEmbed tweetId="1402537311930257412" />
+										<TwitterTweetEmbed tweetId="1403402661873872900" />
 									</div>
 								</div>
 								<p>3. Enter your twitter handle below:</p>
