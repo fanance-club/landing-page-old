@@ -251,8 +251,8 @@ function Hero(props) {
 									}}
 								>
 									⚽ Login to avail 20 $FANC Airdrop
-									<br />⚽ to join Fanance Club Referral Program and
-									<br />⚽ to get early access to $FANC Token Sale
+									<br />⚽ To join Fanance Club Referral Program and
+									<br />⚽ To get early access to $FANC Token Sale
 								</h5>
 							</>
 						)}
@@ -304,8 +304,8 @@ function Hero(props) {
 									screenName="FananceClub"
 									options={{ size: "large" }}
 								/>
-								2. Like and Retweet the below tweet on Twitter (Click on the
-								tweet or click this{" "}
+								2. Like, Retweet and Tag 3 friends in the below tweet on Twitter
+								(Click on the tweet or click this{" "}
 								<a
 									href="https://twitter.com/FananceClub/status/1402537311930257412"
 									target="_blank"
@@ -369,7 +369,7 @@ function Hero(props) {
 									style={{ color: "white" }}
 									onChange={setTwitter2State}
 								>
-									Liked and Retweeted the above tweet
+									Liked, Retweeted and Tagged 3 friends in the above tweet
 								</Checkbox>
 								<br />
 								<Checkbox
@@ -395,15 +395,17 @@ function Hero(props) {
 										shape="round"
 									>
 										Submit Airdrop entry
-									</Button><br /><br />
+									</Button>
+									<br />
+									<br />
 									<Button
-									type="primary"
-									onClick={signOut}
-									style={{ color: "#273238" }}
-									shape="round"
-								>
-									Sign Out
-								</Button>
+										type="primary"
+										onClick={signOut}
+										style={{ color: "#273238" }}
+										shape="round"
+									>
+										Sign Out
+									</Button>
 								</p>
 								<p id="submissionError" style={{ color: "red" }}></p>
 							</>
@@ -422,6 +424,7 @@ function Hero(props) {
 										</b>{" "}
 										$FANC
 									</Title>
+									<p>(Can be claimed in September)</p>
 									<Title level={5} style={{ color: "white" }}>
 										Number of successful referrals -{" "}
 										<b style={{ color: "#18ffff" }}>
@@ -538,8 +541,8 @@ function Hero(props) {
 							<br />
 							<p style={{ textAlign: "center", fontSize: "20px" }}>
 								⚽ Login to avail 20 $FANC Airdrop
-								<br />⚽ to join Fanance Club Referral Program and
-								<br />⚽ to get early access to $FANC Token Sale
+								<br />⚽ To join Fanance Club Referral Program and
+								<br />⚽ To get early access to $FANC Token Sale
 							</p>
 							<p style={{ textAlign: "center" }}>
 								<Button
@@ -560,6 +563,9 @@ function Hero(props) {
 				<Title level={3} style={{ textAlign: "center", color: "white" }}>
 					🔥 Mother of all Airdrops !!! 🔥
 				</Title>
+				<p style={{ textAlign: "center", color: "white" }}>
+					(In addition to the above registration and referrals bonuses)
+				</p>
 				<Title level={5} style={{ textAlign: "center", color: "white" }}>
 					A total of 100,000 $FANC to be won
 				</Title>
