@@ -450,14 +450,14 @@ function Hero(props) {
 										fontWeight: "bold",
 									}}
 								>
-									https://fanance.club/?referrer={props.user.uid}
+									https://fanance.club/?referrer={props.user.uid}/
 								</p>
 								<Button
 									type="primary"
 									size="small"
 									onClick={() =>
 										copyToClipBoard(
-											`https://fanance.club/?referrer=${props.user.uid}`
+											`https://fanance.club/?referrer=${props.user.uid}/`
 										)
 									}
 									style={{ color: "#273238" }}
@@ -471,7 +471,7 @@ function Hero(props) {
 									Share referral link to your network
 								</Title>
 								<TwitterShareButton
-									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									url={`https://fanance.club/?referrer=${props.user.uid}/`}
 									title={
 										"Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
 									}
@@ -481,7 +481,7 @@ function Hero(props) {
 									<TwitterIcon size={40} round={true} />
 								</TwitterShareButton>{" "}
 								<TelegramShareButton
-									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									url={`https://fanance.club/?referrer=${props.user.uid}/`}
 									title={
 										"Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
 									}
@@ -489,7 +489,7 @@ function Hero(props) {
 									<TelegramIcon size={40} round={true} />
 								</TelegramShareButton>{" "}
 								<RedditShareButton
-									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									url={`https://fanance.club/?referrer=${props.user.uid}/`}
 									title={
 										"Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
 									}
@@ -497,20 +497,20 @@ function Hero(props) {
 									<RedditIcon size={40} round={true} />
 								</RedditShareButton>{" "}
 								<FacebookShareButton
-									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									url={`https://fanance.club/?referrer=${props.user.uid}/`}
 									quote="Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
 									hashtag="#Airdrop #FananceClub #DeFi"
 								>
 									<FacebookIcon size={40} round={true} />
 								</FacebookShareButton>{" "}
 								<LinkedinShareButton
-									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									url={`https://fanance.club/?referrer=${props.user.uid}/`}
 									title="Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
 								>
 									<LinkedinIcon size={40} round={true} />
 								</LinkedinShareButton>{" "}
 								<WhatsappShareButton
-									url={`https://fanance.club/?referrer=${props.user.uid}`}
+									url={`https://fanance.club/?referrer=${props.user.uid}/`}
 									title={
 										"Participate in Fanance Club Airdrop and earn 20 $FANC and more !!!"
 									}

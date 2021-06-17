@@ -13,7 +13,7 @@ import Sidebar from "./Drawer";
 import firebase from "./firebase";
 import queryString from "query-string";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 firebase.auth().onAuthStateChanged(function (user) {
@@ -37,7 +37,7 @@ function App() {
 				<Navbar />
 				<Hero user={user} />
 				<Switch>
-					<Route path="/team">
+					<Route exact path="/team">
 						<Team />
 					</Route>
 					<Route path="/">
@@ -51,8 +51,6 @@ function App() {
 				</Switch>
 
 				<Footer />
-				{/* <Route path="/referrer=:referrer"> */}
-				{/* </Route> */}
 			</div>
 		</Router>
 	);

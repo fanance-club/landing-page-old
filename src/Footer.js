@@ -1,4 +1,5 @@
 import { Layout, Row, Col, Divider } from "antd";
+import { Link } from "react-router-dom";
 const { Footer } = Layout;
 
 function FooterContent() {
@@ -61,7 +62,7 @@ function FooterContent() {
 								FAQs
 							</a>
 							<br></br>
-							<a href="/team">Team</a>
+							<Link to="/team">Team</Link>
 						</Col>
 					</Row>
 				</Col>
