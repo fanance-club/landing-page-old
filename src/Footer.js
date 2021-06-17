@@ -60,6 +60,8 @@ function FooterContent() {
 							>
 								FAQs
 							</a>
+							<br></br>
+							<a href="/team">Team</a>
 						</Col>
 					</Row>
 				</Col>

@@ -8,11 +8,12 @@ import Roadmap from "./Roadmap.js";
 import Register from "./Register.js";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Team from "./Team";
 import Sidebar from "./Drawer";
 import firebase from "./firebase";
 import queryString from "query-string";
 
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 firebase.auth().onAuthStateChanged(function (user) {
@@ -35,12 +36,20 @@ function App() {
 			<div className="App">
 				<Navbar />
 				<Hero user={user} />
-				<About />
-				<DAPP />
-				<Features />
-				<FANCToken />
-				<Roadmap />
-				<Register />
+				<Switch>
+					<Route exact path="/team">
+						<Team />
+					</Route>
+					<Route path="/">
+						<About />
+						<DAPP />
+						<Features />
+						<FANCToken />
+						<Roadmap />
+						<Register />
+					</Route>
+				</Switch>
+
 				<Footer />
 				{/* <Route path="/referrer=:referrer"> */}
 				{/* </Route> */}

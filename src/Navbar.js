@@ -1,4 +1,5 @@
 import { Layout, Menu } from "antd";
+import { Route } from "react-router-dom";
 const { Header } = Layout;
 
 const Navbar = () => {
@@ -20,6 +21,14 @@ const Navbar = () => {
 					borderColor: "#263238",
 				}}
 			>
+				<Menu.Item key="home">
+					<Route exact path="/team">
+						<a href="/" style={{ color: "#18ffff", fontWeight: "bold" }}>
+							HOME
+						</a>
+					</Route>
+				</Menu.Item>
+
 				<Menu.Item key="whitepaper">
 					<a
 						href="/whitepaper.pdf"
