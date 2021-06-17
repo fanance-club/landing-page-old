@@ -37,7 +37,7 @@ function App() {
 				<Navbar />
 				<Hero user={user} />
 				<Switch>
-					<Route exact path="/team">
+					<Route path="/team">
 						<Team />
 					</Route>
 					<Route path="/">
