@@ -11,7 +11,7 @@ import {
 } from "antd";
 import React, { useState, useEffect } from "react";
 import "./hero.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, Route } from "react-router-dom";
 import { TwitterOutlined, GoogleOutlined } from "@ant-design/icons";
 import firebase from "./firebase";
 import { TwitterTweetEmbed, TwitterFollowButton } from "react-twitter-embed";
@@ -223,7 +223,7 @@ function Hero(props) {
 						>
 							Your knowledge and passion towards your favourite sports players
 							is gonna make you Money from now on!!!
-						</h2>
+						</h2><Route path="/team">
 						<Button
 							type="primary"
 							size="large"
@@ -255,7 +255,7 @@ function Hero(props) {
 									<br />⚽ To get early access to $FANC Token Sale
 								</h5>
 							</>
-						)}
+						)}</Route>
 					</div>
 				</Col>
 				<Col xs={24} sm={24} md={8} lg={8} xl={8}>

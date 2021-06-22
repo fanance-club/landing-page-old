@@ -62,7 +62,7 @@ function FooterContent() {
 								FAQs
 							</a>
 							<br></br>
-							<Link to="/team">Team</Link>
+							<a href="/#/team">Team</a>
 						</Col>
 					</Row>
 				</Col>
