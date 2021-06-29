@@ -40,6 +40,7 @@ function Hero(props) {
 	const [twitter1, setTwitter1] = useState(false);
 	const [twitter2, setTwitter2] = useState(false);
 	const [telegram1, setTelegram1] = useState(false);
+	const [allUsers, setAllUsers] = useState([]);
 	const [twitterHandle, setTwitterHandle] = useState("");
 	const [telegramHandle, setTelegramHandle] = useState("");
 	const [userDetails, setUserDetails] = useState(null);
@@ -65,6 +66,25 @@ function Hero(props) {
 	const onClose = () => {
 		setVisible(false);
 	};
+	// const getAllUsers = () => {
+	// 	let allUsers = [];
+	// 	const db = firebase.firestore();
+	// 	db.collection("users")
+	// 		.orderBy("registeredAt")
+	// 		.get()
+	// 		.then((querySnapshot) => {
+	// 			querySnapshot.forEach((doc) => {
+	// 				// doc.data() is never undefined for query doc snapshots
+	// 				allUsers.push({
+	// 					name: doc.data().displayName,
+	// 					referrals: doc.data().referrees.length,
+	// 					twitterId: doc.data().twitterId,
+	// 					telegramId: doc.data().telegramId,
+	// 				});
+	// 			});
+	// 		});
+	// 	setAllUsers(allUsers);
+	// };
 	useEffect(() => {
 		const db = firebase.firestore();
 		if (props.user) {
@@ -199,7 +219,6 @@ function Hero(props) {
 	};
 	let query = useQuery();
 	const twitterHashtags = ["Airdrop", "FananceClub", "DeFi", "Cardano"];
-
 	return (
 		<div className="hero">
 			<Row justify="space-around" align="middle">
@@ -223,39 +242,41 @@ function Hero(props) {
 						>
 							Your knowledge and passion towards your favourite sports players
 							is gonna make you Money from now on!!!
-						</h2><Route path="/team">
-						<Button
-							type="primary"
-							size="large"
-							style={{
-								backgroundColor: "#273238",
-								borderColor: "#18ffff",
-								borderRadius: "5px",
-								color: "#18ffff",
-								fontWeight: "bold",
-							}}
-							onClick={showDrawer}
-						>
-							{props.user ? "DASHBOARD" : "REGISTER"}
-						</Button>
-						{props.user ? (
-							""
-						) : (
-							<>
-								<h5
-									style={{
-										color: "white",
-										fontWeight: "bold",
-										textShadow: "1px 1px 5px #263238",
-										textAlign: "center",
-									}}
-								>
-									⚽ Login to avail 20 $FANC Airdrop
-									<br />⚽ To join Fanance Club Referral Program and
-									<br />⚽ To get early access to $FANC Token Sale
-								</h5>
-							</>
-						)}</Route>
+						</h2>
+						<Route path="/team">
+							<Button
+								type="primary"
+								size="large"
+								style={{
+									backgroundColor: "#273238",
+									borderColor: "#18ffff",
+									borderRadius: "5px",
+									color: "#18ffff",
+									fontWeight: "bold",
+								}}
+								onClick={showDrawer}
+							>
+								{props.user ? "DASHBOARD" : "REGISTER"}
+							</Button>
+							{props.user ? (
+								""
+							) : (
+								<>
+									<h5
+										style={{
+											color: "white",
+											fontWeight: "bold",
+											textShadow: "1px 1px 5px #263238",
+											textAlign: "center",
+										}}
+									>
+										⚽ Login to avail 20 $FANC Airdrop
+										<br />⚽ To join Fanance Club Referral Program and
+										<br />⚽ To get early access to $FANC Token Sale
+									</h5>
+								</>
+							)}
+						</Route>
 					</div>
 				</Col>
 				<Col xs={24} sm={24} md={8} lg={8} xl={8}>
@@ -580,6 +601,14 @@ function Hero(props) {
 					⚽ 10 - Lucky draw from the first 500 registrations
 					<br />⚽ 10 - Lucky draw from all who did at least 5 referrals
 				</p>
+				{/* {() => getAllUsers()}
+				{allUsers.map((user) => {
+					return (
+						<p>
+							{user.name},{user.referrals},{user.twitterId},{user.telegramId}
+						</p>
+					);
+				})} */}
 			</Drawer>
 		</div>
 	);
