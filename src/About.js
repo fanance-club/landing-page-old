@@ -1,40 +1,43 @@
-import { Typography, Row, Col } from "antd";
+import { Typography, Row, Col, Card } from "antd";
 import YoutubeEmbed from "./YoutubeEmbed";
 const { Title } = Typography;
 function About() {
 	return (
-		<Row justify="space-around" align="middle" id="about-us">
-			<Col xs={0} sm={0} md={9} className="only-large-screen">
-				<YoutubeEmbed embedId="xE1i1Cafu5k" />
-			</Col>
-			<Col xs={24} md={15} style={{ color: "white" }}>
-				<Title
-					levle={2}
+		<Row
+			justify="center"
+			align="middle"
+			id="about-us"
+			style={{ backgroundColor: "white" }}
+		>
+			<Col xs={24} md={12} style={{ padding: "40px" }}>
+				<Card
+					bordered={false}
 					style={{
-						color: "white",
-						padding: "0 10px 0 10px",
-						textAlign: "center",
+						borderRadius: "12px",
+						width: "100%",
+						color: "black",
 					}}
+					className="radialbginvert"
 				>
-					ABOUT FANANCE CLUB
-				</Title>
-				<div
-					className="site-layout-content"
-					style={{ padding: "0 10px 0 10px", fontSize: "20px" }}
-				>
-					<p style={{ textAlign: "justify"}} className="large-padding">
-						Fanance Club is a Revolutionary & Deflationary DeFi cum Fantasy
-						Stocks trading platform powered by the Cardano blockchain where
-						users can trade digital assets or celebrity stocks that represent
-						real-life performance statistics. It is a decentralized social
-						gaming/trading experience in which people can express their passion
-						for sports/their favorite stars, compete against each other, and
-						show <b>“How much your craze for your favorite stars is worth”</b>
-					</p>
-				</div>
+					<b style={{ fontSize: "20px" }}>
+						How is Real Life Performance linked?
+					</b>
+					<br></br>
+					<span style={{ fontSize: "12px" }}>
+						Every month , the number of player tokens will be minted based on
+						his/her real-life performance. These tokens are distributed to NFT
+						owners & LP Stakers. Thus the player's performance directly
+						influences users to Buy or sell or hold making it truly linked to
+						real-life performance.
+					</span>
+				</Card>
 			</Col>
-			<Col xs={24} sm={24} md={0} className="only-small-screen">
-				<YoutubeEmbed embedId="xE1i1Cafu5k" />
+			<Col xs={24} md={12} style={{ color: "white", textAlign: "center" }}>
+				<img
+					src="/soccer-hero-2.png"
+					alt="soccer-hero"
+					style={{ padding: "40px", width: "80%" }}
+				/>
 			</Col>
 		</Row>
 	);

@@ -12,39 +12,39 @@ import {
 const { Title } = Typography;
 const data = [
 	{
-		icon: <BgColorsOutlined />,
-		title: "AMM based Liquidity",
+		icon: <ApiOutlined />,
+		title: "Buy, Sell or Trade",
 		description:
-			"Ability to buy and sell players anytime managed by smart-contracts - No more order books",
+			"Your favourite Sport Player’s Stock just like stocks in stock market or cryptos in crypto market",
 	},
 	{
-		icon: <ApiOutlined />,
-		title: "Cardano Blockchain",
+		icon: <BgColorsOutlined />,
+		title: "Be a Liquidity Provider",
 		description:
-			"Fanance Club uses the Cardano blockchain to provide transparency, security, decentralization, AMM based liquidity and secure ownership",
+			"Provide Liquidity to “FANC-ADA” or any “PLAYER- FANC” pool and avail LP Tokens",
 	},
 	{
 		icon: <SolutionOutlined />,
-		title: "Real-Life Performance",
+		title: "Stake your LP Token",
 		description:
-			"Prices influenced by players' real life performance. Stay ahead of other users by leveraging your sports knowledge",
+			"Stake your LP Tokens to Farm lucrative APYs and also to get a % of Transaction fee proportionate to your contribution in the pools",
 	},
 	{
 		icon: <DollarCircleOutlined />,
-		title: "Staking Rewards",
+		title: "Buy Player's NFT",
 		description:
-			"Stake LP & earn FANC or Players tokens with Lucrative APYs & Txn fee",
-	},
-	{
-		icon: <StarOutlined />,
-		title: "NFT Ownership",
-		description:
-			"Be an owner of Player’s NFT & maximise the upside by enjoying Lucrative Player token’s APYs & tnx fees",
+			"Bid the auction and win the unique ( Only 1 per player) NFT for each Player. Enjoy the ownership of the Player’s NFT along with % of Player’s Transaction fee and Farm APY without staking. The ownership can be sold via opening an auction",
 	},
 	{
 		icon: <SwapOutlined />,
-		title: "Prediction Market",
-		description: "Predict the match outcome and win amazing returns",
+		title: "Predict and Win",
+		description:
+			"Predict the game outcome and win FANC tokens from game pool",
+	},
+	{
+		icon: <StarOutlined />,
+		title: "Be a decision maker",
+		description: "As community driven, your voice will be heard via your votes for every critical decision in the platform",
 	},
 ];
 
@@ -53,7 +53,7 @@ function Features() {
 		<div
 			style={{
 				backgroundImage:
-					"linear-gradient(0deg, 	rgb(24,255,255,0.5), rgb(0,0,0,0.9)),url('/football-stadium-ball-bg.jpg')",
+					"linear-gradient(0deg, rgb(255,255,255,0.7), rgb(255,255,255,0.7)),url('/football-stadium-ball-bg.jpg')",
 				textAlign: "center",
 				backgroundSize: "cover",
 				backgroundPosition: "bottom",
@@ -61,48 +61,64 @@ function Features() {
 			}}
 			id="features"
 		>
-			<Title style={{ color: "white", padding: "25px 25px 0 25px" }}>
+			<Title style={{ color: "black", padding: "25px 25px 0 25px" }}>
 				FEATURES
 			</Title>
-			<Card
-				bordered={false}
-				style={{ backgroundColor: "rgb(38,50,56,0.5", borderRadius: "12px" }}
-				hoverable={true}
-			>
-				<List
-					grid={{
-						gutter: 16,
-						xs: 1,
-						sm: 2,
-						md: 3,
-						lg: 3,
-						xl: 3,
-						xxl: 3,
-					}}
-					dataSource={data}
-					renderItem={(item) => (
-						<List.Item>
-							<Row
-								justify="space-around"
-								align="middle"
-								style={{ color: "#18ffff" }}
+
+			<List
+				grid={{
+					gutter: 16,
+					xs: 1,
+					sm: 1,
+					md: 2,
+					lg: 3,
+					xl: 3,
+					xxl: 3,
+				}}
+				dataSource={data}
+				renderItem={(item) => (
+					<List.Item>
+						<Row justify="space-around" align="middle" style={{padding:"20px"}}>
+							<Card
+								bordered={false}
+								style={{
+									backgroundColor: "rgb(255,255,255,0.8)",
+									borderRadius: "12px",
+									height:"250px"
+								}}
+								hoverable={true}
 							>
-								<Col span={6} style={{ fontSize: "50px" }}>
+								<Col
+									span={24}
+									style={{
+										fontSize: "50px",
+										color: "black",
+										textAlign: "center",
+									}}
+								>
 									{item.icon}
 								</Col>
-								<Col span={18} style={{ textAlign: "justify" }}>
-									<span style={{ fontSize: "20px", fontWeight: "bold" }}>
+								<Col span={24} style={{ textAlign: "center" }}>
+									<span
+										style={{
+											fontSize: "20px",
+											fontWeight: "bold",
+											color: "black",
+										}}
+									>
 										{item.title}
 									</span>
 									<br></br>
-									<span style={{ color: "white" }}>{item.description}</span>
+									<p style={{ color: "black", textAlign: "justify" }}>
+										{item.description}
+									</p>
 								</Col>
-							</Row>
-						</List.Item>
-					)}
-					style={{ padding: "10px" }}
-				/>
-			</Card>
+							</Card>
+						</Row>
+					</List.Item>
+				)}
+				style={{ padding: "10px" }}
+			/>
 			<br></br>
 		</div>
 	);

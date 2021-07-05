@@ -41,12 +41,11 @@ function App() {
 						<Team />
 					</Route>
 					<Route path="/">
-						<About />
-						<DAPP />
 						<Features />
-						<FANCToken />
+						<DAPP />
+						<About />
+						{/* <FANCToken /> */}
 						<Roadmap />
-						<Register />
 					</Route>
 				</Switch>
 

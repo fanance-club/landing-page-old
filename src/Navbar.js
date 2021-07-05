@@ -8,22 +8,33 @@ const Navbar = () => {
 			style={{
 				zIndex: 1,
 				width: "100%",
-				backgroundColor: "#263238",
+				backgroundColor: "white",
 				boxShadow: "0px 1px 10px",
 			}}
 		>
+			<img
+				src="logo-v3.png"
+				style={{ float: "left", height: "100%" }}
+				alt="logo"
+			/>
+			<span
+				className="large-screen-only"
+				style={{ fontSize: "30px", fontWeight: "bold" }}
+			>
+				Fanance Club
+			</span>
 			<Menu
 				mode="horizontal"
 				style={{
 					float: "right",
-					backgroundColor: "#263238",
+					backgroundColor: "white",
 					height: "64px",
-					borderColor: "#263238",
+					borderColor: "white",
 				}}
 			>
 				<Menu.Item key="home">
 					<Route exact path="/team">
-						<a href="/" style={{ color: "#18ffff", fontWeight: "bold" }}>
+						<a href="/" style={{ color: "black", fontWeight: "bold" }}>
 							HOME
 						</a>
 					</Route>
@@ -34,7 +45,7 @@ const Navbar = () => {
 						href="/whitepaper.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
-						style={{ color: "#18ffff", fontWeight: "bold" }}
+						style={{ color: "black", fontWeight: "bold" }}
 					>
 						WHITEPAPER
 					</a>
@@ -44,7 +55,7 @@ const Navbar = () => {
 						href="https://fanance-club.gitbook.io/fanance-club/lite-paper"
 						target="_blank"
 						rel="noopener noreferrer"
-						style={{ color: "#18ffff", fontWeight: "bold" }}
+						style={{ color: "black", fontWeight: "bold" }}
 					>
 						LITEPAPER
 					</a>
@@ -54,7 +65,7 @@ const Navbar = () => {
 						href="https://fanance-club.gitbook.io/fanance-club/faqs"
 						target="_blank"
 						rel="noopener noreferrer"
-						style={{ color: "#18ffff", fontWeight: "bold" }}
+						style={{ color: "black", fontWeight: "bold" }}
 					>
 						FAQs
 					</a>

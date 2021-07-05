@@ -40,7 +40,6 @@ function Hero(props) {
 	const [twitter1, setTwitter1] = useState(false);
 	const [twitter2, setTwitter2] = useState(false);
 	const [telegram1, setTelegram1] = useState(false);
-	const [allUsers, setAllUsers] = useState([]);
 	const [twitterHandle, setTwitterHandle] = useState("");
 	const [telegramHandle, setTelegramHandle] = useState("");
 	const [userDetails, setUserDetails] = useState(null);
@@ -66,25 +65,7 @@ function Hero(props) {
 	const onClose = () => {
 		setVisible(false);
 	};
-	// const getAllUsers = () => {
-	// 	let allUsers = [];
-	// 	const db = firebase.firestore();
-	// 	db.collection("users")
-	// 		.orderBy("registeredAt")
-	// 		.get()
-	// 		.then((querySnapshot) => {
-	// 			querySnapshot.forEach((doc) => {
-	// 				// doc.data() is never undefined for query doc snapshots
-	// 				allUsers.push({
-	// 					name: doc.data().displayName,
-	// 					referrals: doc.data().referrees.length,
-	// 					twitterId: doc.data().twitterId,
-	// 					telegramId: doc.data().telegramId,
-	// 				});
-	// 			});
-	// 		});
-	// 	setAllUsers(allUsers);
-	// };
+
 	useEffect(() => {
 		const db = firebase.firestore();
 		if (props.user) {
@@ -220,63 +201,60 @@ function Hero(props) {
 	let query = useQuery();
 	const twitterHashtags = ["Airdrop", "FananceClub", "DeFi", "Cardano"];
 	return (
-		<div className="hero">
-			<Row justify="space-around" align="middle">
+		<div
+			className="hero"
+			style={{
+				backgroundImage: "linear-gradient(0deg, rgb(255,255,255,0.8), rgb(255,255,255,0.6)),url('/blue-bg.jpg')",
+				backgroundSize: "auto",
+				backgroundPosition: "bottom",
+			}}
+		>
+			<Row justify="" align="middle">
 				<Col xs={24} sm={24} md={16} lg={16} xl={16}>
 					<div className="title">
-						<img src="/logo.png" width="70%" className="hero-logo" alt="logo" />
-						<h2
-							className="hero-sub-title"
-							style={{ color: "white", textShadow: "0px 0px 3px black" }}
-						>
-							Finance for Fans
-						</h2>
-						<h2
+						<h1 style={{ fontSize: "40px", fontWeight: "bold" }}>
+							Sports Players' stocks DEX
+						</h1>
+						<h4
 							style={{
-								color: "white",
+								color: "black",
 								fontWeight: "bold",
-								textShadow: "1px 1px 5px #263238",
 								textAlign: "center",
 							}}
-							className="hero-text"
 						>
-							Your knowledge and passion towards your favourite sports players
-							is gonna make you Money from now on!!!
-						</h2>
-						<Route path="/team">
-							<Button
-								type="primary"
-								size="large"
-								style={{
-									backgroundColor: "#273238",
-									borderColor: "#18ffff",
-									borderRadius: "5px",
-									color: "#18ffff",
-									fontWeight: "bold",
-								}}
-								onClick={showDrawer}
-							>
-								{props.user ? "DASHBOARD" : "REGISTER"}
-							</Button>
-							{props.user ? (
-								""
-							) : (
-								<>
-									<h5
-										style={{
-											color: "white",
-											fontWeight: "bold",
-											textShadow: "1px 1px 5px #263238",
-											textAlign: "center",
-										}}
-									>
-										⚽ Login to avail 20 $FANC Airdrop
-										<br />⚽ To join Fanance Club Referral Program and
-										<br />⚽ To get early access to $FANC Token Sale
-									</h5>
-								</>
-							)}
-						</Route>
+							Buy and Sell your Favourite Sports Player’s Stocks
+						</h4>
+
+						<Button
+							type="primary"
+							size="large"
+							style={{
+								backgroundColor: "#18ffff",
+								borderColor: "#273238",
+								borderRadius: "5px",
+								color: "#273238",
+								fontWeight: "bold",
+							}}
+							onClick={showDrawer}
+						>
+							{props.user ? "DASHBOARD" : "REGISTER"}
+						</Button>
+						{props.user ? (
+							""
+						) : (
+							<>
+								<h5
+									style={{
+										color: "black",
+										textAlign: "center",
+									}}
+								>
+									⚽ Login to avail 20 $FANC Airdrop
+									<br />⚽ To join Fanance Club Referral Program and
+									<br />⚽ To get early access to $FANC Token Sale
+								</h5>
+							</>
+						)}
 					</div>
 				</Col>
 				<Col xs={24} sm={24} md={8} lg={8} xl={8}>
@@ -328,7 +306,7 @@ function Hero(props) {
 								2. Like, Retweet and Tag 3 friends in the below tweet on Twitter
 								(Click on the tweet or click this{" "}
 								<a
-									href="https://twitter.com/FananceClub/status/1403402661873872900"
+									href="https://twitter.com/FananceClub/status/1406163615313383424"
 									target="_blank"
 									rel="noreferrer"
 								>
@@ -337,7 +315,7 @@ function Hero(props) {
 								and Retweet)
 								<div className="centerContent">
 									<div className="selfCenter">
-										<TwitterTweetEmbed tweetId="1403402661873872900" />
+										<TwitterTweetEmbed tweetId="1406163615313383424" />
 									</div>
 								</div>
 								<p>3. Enter your twitter handle below:</p>
@@ -580,35 +558,6 @@ function Hero(props) {
 						</p>
 					</>
 				)}
-				<Divider />
-				<Title level={3} style={{ textAlign: "center", color: "white" }}>
-					🔥 Mother of all Airdrops !!! 🔥
-				</Title>
-				<p style={{ textAlign: "center", color: "white" }}>
-					(In addition to the above registration and referrals bonuses)
-				</p>
-				<Title level={5} style={{ textAlign: "center", color: "white" }}>
-					A total of 100,000 $FANC to be won
-				</Title>
-				<Title level={5} style={{ textAlign: "center", color: "white" }}>
-					50 eligible winners will get 2000 $FANC tokens each
-				</Title>
-				<p style={{ padding: "15px" }}>
-					⚽ Total Number of winners - 50
-					<br />
-					⚽ 30 - Top 30 with highest number of referrals
-					<br />
-					⚽ 10 - Lucky draw from the first 500 registrations
-					<br />⚽ 10 - Lucky draw from all who did at least 5 referrals
-				</p>
-				{/* {() => getAllUsers()}
-				{allUsers.map((user) => {
-					return (
-						<p>
-							{user.name},{user.referrals},{user.twitterId},{user.telegramId}
-						</p>
-					);
-				})} */}
 			</Drawer>
 		</div>
 	);

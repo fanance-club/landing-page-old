@@ -3,13 +3,13 @@ const { Title } = Typography;
 
 const Team = () => {
 	return (
-		<div style={{ textAlign: "center" }}>
-			<Title style={{ color: "white" }}>
+		<div style={{ textAlign: "center",backgroundColor:"white" }}>
+			<Title style={{ color: "black" }}>
 				Meet the team behind Fanance Club
 			</Title>
 			<Row>
 				<Col
-					style={{ color: "#18ffff", padding: "20px" }}
+					style={{ color:"black", padding: "20px" }}
 					xs={24}
 					sm={12}
 					md={6}
@@ -31,7 +31,7 @@ const Team = () => {
 						/>
 					</a>
 					<p style={{ fontWeight: "bold" }}>Sathish Aravind</p>
-					<p style={{ color: "white" }}>
+					<p style={{ color: "black" }}>
 						<span style={{ fontWeight: "bold" }}>Co-Founder and CEO</span>
 						<br />
 						EX-EMURGO - India marketing head
@@ -40,7 +40,7 @@ const Team = () => {
 					</p>
 				</Col>
 				<Col
-					style={{ color: "#18ffff", padding: "20px" }}
+					style={{ color: "black", padding: "20px" }}
 					xs={24}
 					sm={12}
 					md={6}
@@ -62,7 +62,7 @@ const Team = () => {
 						/>
 					</a>
 					<p style={{ fontWeight: "bold" }}>Raghu Thiyagharajan</p>
-					<p style={{ color: "white" }}>
+					<p style={{ color: "black" }}>
 						<span style={{ fontWeight: "bold" }}>Co-Founder and CTO</span>
 						<br />
 						EX-EMURGO - AGM Blockchain tech
@@ -71,7 +71,7 @@ const Team = () => {
 					</p>
 				</Col>
 				<Col
-					style={{ color: "#18ffff", padding: "20px" }}
+					style={{ color: "black", padding: "20px" }}
 					xs={24}
 					sm={12}
 					md={6}
@@ -93,7 +93,7 @@ const Team = () => {
 						/>
 					</a>
 					<p style={{ fontWeight: "bold" }}>Rahul Oberoi</p>
-					<p style={{ color: "white" }}>
+					<p style={{ color: "black" }}>
 						<span style={{ fontWeight: "bold" }}>
 							Partnership and Alliances Manager
 						</span>
@@ -102,7 +102,7 @@ const Team = () => {
 					</p>
 				</Col>
 				<Col
-					style={{ color: "#18ffff", padding: "20px" }}
+					style={{ color: "black", padding: "20px" }}
 					xs={24}
 					sm={12}
 					md={6}
@@ -124,7 +124,7 @@ const Team = () => {
 						/>
 					</a>
 					<p style={{ fontWeight: "bold" }}>Harshita Jain</p>
-					<p style={{ color: "white" }}>
+					<p style={{ color: "black" }}>
 						<span style={{ fontWeight: "bold" }}>
 							Community & Marketing Manager
 						</span>
@@ -133,7 +133,7 @@ const Team = () => {
 					</p>
 				</Col>
 				<Col
-					style={{ color: "#18ffff", padding: "20px" }}
+					style={{ color: "black", padding: "20px" }}
 					xs={24}
 					sm={12}
 					md={6}
@@ -155,7 +155,7 @@ const Team = () => {
 						/>
 					</a>
 					<p style={{ fontWeight: "bold" }}>T. Chary</p>
-					<p style={{ color: "white" }}>
+					<p style={{ color: "black" }}>
 						<span style={{ fontWeight: "bold" }}>
 							Blockchain Smart Contract Developer lead
 						</span>
@@ -164,7 +164,7 @@ const Team = () => {
 					</p>
 				</Col>
 				<Col
-					style={{ color: "#18ffff", padding: "20px" }}
+					style={{ color: "black", padding: "20px" }}
 					xs={24}
 					sm={12}
 					md={6}
@@ -186,7 +186,7 @@ const Team = () => {
 						/>
 					</a>
 					<p style={{ fontWeight: "bold" }}>Ram Kiran</p>
-					<p style={{ color: "white" }}>
+					<p style={{ color: "black" }}>
 						<span style={{ fontWeight: "bold" }}>
 							Blockchain Developer and Tester
 						</span>
@@ -197,7 +197,7 @@ const Team = () => {
 					</p>
 				</Col>
 				<Col
-					style={{ color: "#18ffff", padding: "20px" }}
+					style={{ color: "black", padding: "20px" }}
 					xs={24}
 					sm={12}
 					md={6}
@@ -219,7 +219,7 @@ const Team = () => {
 						/>
 					</a>
 					<p style={{ fontWeight: "bold" }}>Santhosh Kumar</p>
-					<p style={{ color: "white" }}>
+					<p style={{ color: "black" }}>
 						<span style={{ fontWeight: "bold" }}>Backend Developer</span>
 						<br />8 years of experience in Backend Development
 					</p>
@@ -247,7 +247,7 @@ const Team = () => {
 						/>
 					</a>
 					<p style={{ fontWeight: "bold" }}>Adil Abbas</p>
-					<p style={{ color: "white" }}>
+					<p style={{ color: "black" }}>
 						<span style={{ fontWeight: "bold" }}>Strategic Advisor</span>
 						<br />
 						Founder and CEO of Alacrity Blockchain

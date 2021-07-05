@@ -63,6 +63,30 @@ function FooterContent() {
 							</a>
 							<br></br>
 							<a href="/#/team">Team</a>
+							<br></br>
+							<a
+								href="https://twitter.com/FananceClub"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Twitter
+							</a>
+							<br></br>
+							<a
+								href="https://fananceclub.medium.com/"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Medium
+							</a>
+							<br></br>
+							<a
+								href="https://t.me/FananceClubChat"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Telegram
+							</a>
 						</Col>
 					</Row>
 				</Col>
