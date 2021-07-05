@@ -8,7 +8,6 @@ body {
 .title {
 	text-align: center;
 	color: #fff;
-	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -38,13 +37,9 @@ body {
 	margin: 10px 0;
 	font-weight: 900;
 }
-
 @media only screen and (max-width: 768px) {
 	.hero-brand {
 		font-size: 60px;
-	}
-	.title {
-		height: 90vh;
 	}
 	.hero-text {
 		margin: 0px 25px 25px 25px;

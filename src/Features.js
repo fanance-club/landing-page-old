@@ -38,13 +38,13 @@ const data = [
 	{
 		icon: <SwapOutlined />,
 		title: "Predict and Win",
-		description:
-			"Predict the game outcome and win FANC tokens from game pool",
+		description: "Predict the game outcome and win FANC tokens from game pool",
 	},
 	{
 		icon: <StarOutlined />,
 		title: "Be a decision maker",
-		description: "As community driven, your voice will be heard via your votes for every critical decision in the platform",
+		description:
+			"As community driven, your voice will be heard via your votes for every critical decision in the platform",
 	},
 ];
 
@@ -78,15 +78,19 @@ function Features() {
 				dataSource={data}
 				renderItem={(item) => (
 					<List.Item>
-						<Row justify="space-around" align="middle" style={{padding:"20px"}}>
+						<Row
+							justify="space-around"
+							align="middle"
+							style={{ padding: "20px" }}
+						>
 							<Card
 								bordered={false}
 								style={{
 									backgroundColor: "rgb(255,255,255,0.8)",
 									borderRadius: "12px",
-									height:"250px"
 								}}
 								hoverable={true}
+								className="feature-card-height"
 							>
 								<Col
 									span={24}

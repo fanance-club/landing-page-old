@@ -202,14 +202,14 @@ function Hero(props) {
 	const twitterHashtags = ["Airdrop", "FananceClub", "DeFi", "Cardano"];
 	return (
 		<div
-			className="hero"
 			style={{
-				backgroundImage: "linear-gradient(0deg, rgb(255,255,255,0.8), rgb(255,255,255,0.6)),url('/blue-bg.jpg')",
+				backgroundImage:
+					"linear-gradient(0deg, rgb(255,255,255,0.8), rgb(255,255,255,0.6)),url('/blue-bg.jpg')",
 				backgroundSize: "auto",
 				backgroundPosition: "bottom",
 			}}
 		>
-			<Row justify="" align="middle">
+			<Row justify="center" align="middle" style={{ display: "flexbox" }}>
 				<Col xs={24} sm={24} md={16} lg={16} xl={16}>
 					<div className="title">
 						<h1 style={{ fontSize: "40px", fontWeight: "bold" }}>

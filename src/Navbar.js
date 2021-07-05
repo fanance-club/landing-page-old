@@ -16,6 +16,7 @@ const Navbar = () => {
 				src="logo-v3.png"
 				style={{ float: "left", height: "100%" }}
 				alt="logo"
+				className="large-screen-only"
 			/>
 			<span
 				className="large-screen-only"
