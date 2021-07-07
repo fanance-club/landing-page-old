@@ -211,12 +211,14 @@ function Hero(props) {
 			}}
 		>
 			<Navbar />
-			<img
-				src="logo.png"
-				style={{ float: "left", width: "100%" }}
-				alt="logo"
-				className="small-screen-only"
-			/>
+			<div style={{ textAlign: "center" }}>
+				<img
+					src="logo.png"
+					style={{ width: "70%", textAlign: "center" }}
+					alt="logo"
+					className="small-screen-only"
+				/>
+			</div>
 			<Row
 				justify="center"
 				align="middle"
@@ -227,31 +229,33 @@ function Hero(props) {
 					<div className="title">
 						<h1
 							style={{
-								fontSize: "50px",
 								fontWeight: "bold",
 								margin: "0px 0px 20px",
 							}}
+							className="hero-title-1"
 						>
-							Sports Player's stocks DEX
+							Sports Player's Stocks DEX
 						</h1>
 						<h4
 							style={{
 								color: "black",
 								textAlign: "center",
 							}}
+							className="hero-title-2"
 						>
-							<s style={{ fontSize: "20px", color: "#263238" }}>
-								Stop being a Fantasy Player
-							</s>
-							<br />
-							<span style={{ fontSize: "30px", color: "#263238" }}>
-								Start being an Owner
+							<span className="large-screen-only">
+								<s style={{ fontSize: "20px", color: "#263238" }}>
+									Stop being a Fantasy Player
+								</s>
+								<br />
+								<span style={{ fontSize: "30px", color: "#263238" }}>
+									Start being an Owner
+								</span>
+								<br />
+								<br />
 							</span>
-							<br />
-							<br />
 							<span
 								style={{
-									fontSize: "30px",
 									color: "#002c9c",
 								}}
 							>
@@ -285,7 +289,7 @@ function Hero(props) {
 							""
 						) : (
 							<>
-								<h5
+								<h4
 									style={{
 										color: "black",
 										textAlign: "center",
@@ -296,7 +300,7 @@ function Hero(props) {
 									🏏 To join Fanance Club Referral Program and
 									<br />
 									🏀 To get early access to $FANC Token Sale
-								</h5>
+								</h4>
 							</>
 						)}
 					</div>
