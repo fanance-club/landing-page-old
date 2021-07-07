@@ -229,7 +229,7 @@ function Hero(props) {
 					<div className="title">
 						<h1
 							style={{
-								fontWeight: "bold",
+								fontWeight: "1000",
 								margin: "0px 0px 20px",
 							}}
 							className="hero-title-1"
@@ -240,6 +240,7 @@ function Hero(props) {
 							style={{
 								color: "black",
 								textAlign: "center",
+								fontWeight: "bold",
 							}}
 							className="hero-title-2"
 						>

@@ -23,7 +23,7 @@ function About() {
 						How is Real Life Performance linked?
 					</b>
 					<br></br>
-					<span style={{ fontSize: "12px" }}>
+					<span style={{ fontSize: "14px" }}>
 						Every month , the number of player tokens will be minted based on
 						his/her real-life performance. These tokens are distributed to NFT
 						owners & LP Stakers. Thus the player's performance directly
