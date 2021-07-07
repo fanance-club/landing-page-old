@@ -2,7 +2,11 @@ import { Row, Col, Card, Typography } from "antd";
 const { Title } = Typography;
 
 const moveToTop = function () {
-	window.scrollTo(0, 0);
+	window.scrollTo({
+		top: 600,
+		left: 0,
+		behavior: "smooth",
+	});
 };
 
 const Team = () => {
