@@ -8,11 +8,11 @@ const Navbar = () => {
 			style={{
 				zIndex: 1,
 				width: "100%",
-				backgroundColor: "transparent"
+				backgroundColor: "transparent",
 			}}
 		>
 			<img
-				src="logo.png"
+				src="logo-v3.png"
 				style={{ float: "left", height: "100%" }}
 				alt="logo"
 				className="large-screen-only"

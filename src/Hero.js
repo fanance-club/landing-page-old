@@ -213,7 +213,7 @@ function Hero(props) {
 			<Navbar />
 			<div style={{ textAlign: "center" }}>
 				<img
-					src="logo.png"
+					src="logo-v3.png"
 					style={{ width: "70%", textAlign: "center" }}
 					alt="logo"
 					className="small-screen-only"
@@ -227,15 +227,21 @@ function Hero(props) {
 			>
 				<Col xs={24} sm={24} md={16} lg={16} xl={16}>
 					<div className="title">
-						<h1
+						{/* <h1
 							style={{
-								fontWeight: "1000",
+								fontWeight: "bolder",
 								margin: "0px 0px 20px",
 							}}
 							className="hero-title-1"
 						>
-							Sports Player's Stocks DEX
-						</h1>
+							Sports Player's DEX
+						</h1> */}
+						<img
+							src="/dex.png"
+							alt="dex"
+							width="80%"
+							style={{ paddingBottom: "20px" }}
+						/>
 						<h4
 							style={{
 								color: "black",
@@ -250,7 +256,7 @@ function Hero(props) {
 								</s>
 								<br />
 								<span style={{ fontSize: "30px", color: "#263238" }}>
-									Start being an Owner
+									Start Being An Owner
 								</span>
 								<br />
 								<br />
@@ -296,7 +302,7 @@ function Hero(props) {
 										textAlign: "center",
 									}}
 								>
-									⚽ Login to avail 20 $FANC Airdrop
+									⚽ To avail 20 $FANC Airdrop
 									<br />
 									🏏 To join Fanance Club Referral Program and
 									<br />
