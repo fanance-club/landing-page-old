@@ -1,19 +1,19 @@
 import { Row, Col, Card, Typography } from "antd";
 const { Title } = Typography;
 
+const moveToTop = function () {
+	window.scrollTo(0, 0);
+};
+
 const Team = () => {
 	return (
-		<div style={{ textAlign: "center",backgroundColor:"white" }}>
+		<div style={{ textAlign: "center", backgroundColor: "white" }}>
+			{moveToTop()}
 			<Title style={{ color: "black" }}>
 				Meet the team behind Fanance Club
 			</Title>
 			<Row>
-				<Col
-					style={{ color:"black", padding: "20px" }}
-					xs={24}
-					sm={12}
-					md={6}
-				>
+				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
 					<a
 						href="https://www.linkedin.com/in/sathisharavindhere"
 						target="_blank"
@@ -39,12 +39,7 @@ const Team = () => {
 						VP marketing of India's 1st crypto exchange
 					</p>
 				</Col>
-				<Col
-					style={{ color: "black", padding: "20px" }}
-					xs={24}
-					sm={12}
-					md={6}
-				>
+				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
 					<a
 						href="https://www.linkedin.com/in/shriraghuraaman"
 						target="_blank"
@@ -70,12 +65,7 @@ const Team = () => {
 						DeFi blockchain tech lead
 					</p>
 				</Col>
-				<Col
-					style={{ color: "black", padding: "20px" }}
-					xs={24}
-					sm={12}
-					md={6}
-				>
+				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
 					<a
 						href="https://www.linkedin.com/in/rahul-oberoi"
 						target="_blank"
@@ -101,12 +91,7 @@ const Team = () => {
 						EX-EMURGO - Strategic Alliances
 					</p>
 				</Col>
-				<Col
-					style={{ color: "black", padding: "20px" }}
-					xs={24}
-					sm={12}
-					md={6}
-				>
+				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
 					<a
 						href="https://www.linkedin.com/in/harshita-jain-7aa6a884"
 						target="_blank"
@@ -132,12 +117,7 @@ const Team = () => {
 						EX-EMURGO - Sales & Marketing Manager
 					</p>
 				</Col>
-				<Col
-					style={{ color: "black", padding: "20px" }}
-					xs={24}
-					sm={12}
-					md={6}
-				>
+				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
 					<a
 						href="https://www.linkedin.com/in/trilochana-chary-7b73b423"
 						target="_blank"
@@ -163,12 +143,7 @@ const Team = () => {
 						EX-EMURGO - AGM Blockchain Tech lead
 					</p>
 				</Col>
-				<Col
-					style={{ color: "black", padding: "20px" }}
-					xs={24}
-					sm={12}
-					md={6}
-				>
+				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
 					<a
 						href="https://www.linkedin.com/in/ramkiranb"
 						target="_blank"
@@ -196,12 +171,7 @@ const Team = () => {
 						Functional Tester
 					</p>
 				</Col>
-				<Col
-					style={{ color: "black", padding: "20px" }}
-					xs={24}
-					sm={12}
-					md={6}
-				>
+				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
 					<a
 						href="https://www.linkedin.com/in/santhosh-kumar-p-9b166931/"
 						target="_blank"
