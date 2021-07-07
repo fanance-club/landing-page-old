@@ -38,10 +38,10 @@ function Features() {
 						Community Channel Launch (Twitter & Discord)
 						<br />
 						White Paper Release
-						<br />
-						Private Sale
 					</Timeline.Item>
 					<Timeline.Item label="Q3 2021">
+						Private Sale
+						<br />
 						Pre Sale Round 1 ( Very Early Adopter Sale Round)
 						<br />
 						TestNet Launch

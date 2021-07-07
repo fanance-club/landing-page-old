@@ -8,29 +8,28 @@ const Navbar = () => {
 			style={{
 				zIndex: 1,
 				width: "100%",
-				backgroundColor: "white",
-				boxShadow: "0px 1px 10px",
+				backgroundColor: "transparent"
 			}}
 		>
 			<img
-				src="logo-v3.png"
+				src="logo.png"
 				style={{ float: "left", height: "100%" }}
 				alt="logo"
 				className="large-screen-only"
 			/>
-			<span
+			{/* <span
 				className="large-screen-only"
 				style={{ fontSize: "30px", fontWeight: "bold" }}
 			>
 				Fanance Club
-			</span>
+			</span> */}
 			<Menu
 				mode="horizontal"
 				style={{
 					float: "right",
-					backgroundColor: "white",
+					backgroundColor: "transparent",
 					height: "64px",
-					borderColor: "white",
+					borderColor: "none",
 				}}
 			>
 				<Menu.Item key="home">

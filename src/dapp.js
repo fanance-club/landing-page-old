@@ -17,6 +17,9 @@ function DAPP() {
 				</div>
 			</Col>
 			<Col xs={24} md={24} style={{ textAlign: "center" }}>
+				<Title style={{ color: "black", padding: "25px 25px 0 25px" }}>
+					USER FLOW
+				</Title>
 				<img src="/user-flow.png" className="dapp-image-width" />
 			</Col>
 		</Row>

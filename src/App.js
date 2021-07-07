@@ -34,7 +34,7 @@ function App() {
 	return (
 		<Router>
 			<div className="App">
-				<Navbar />
+				{/* <Navbar /> */}
 				<Hero user={user} />
 				<Switch>
 					<Route exact path="/team">

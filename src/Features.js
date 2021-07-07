@@ -15,7 +15,7 @@ const data = [
 		icon: <ApiOutlined />,
 		title: "Buy, Sell or Trade",
 		description:
-			"Your favourite Sport Player’s Stock just like stocks in stock market or cryptos in crypto market",
+			"Your favourite Sport Player’s Stock just like stocks in stock market or cryptos in crypto market. The trades are secured by CARDANO BLOCKCHAIN",
 	},
 	{
 		icon: <BgColorsOutlined />,
@@ -62,7 +62,7 @@ function Features() {
 			id="features"
 		>
 			<Title style={{ color: "black", padding: "25px 25px 0 25px" }}>
-				FEATURES
+				WHAT CAN YOU DO IN FANANCE CLUB
 			</Title>
 
 			<List

@@ -29,6 +29,7 @@ import {
 	TwitterShareButton,
 	WhatsappShareButton,
 } from "react-share";
+import Navbar from "./Navbar";
 const { Title } = Typography;
 
 const useQuery = () => {
@@ -209,22 +210,63 @@ function Hero(props) {
 				backgroundPosition: "bottom",
 			}}
 		>
-			<Row justify="center" align="middle" style={{ display: "flexbox" }}>
+			<Navbar />
+			<img
+				src="logo.png"
+				style={{ float: "left", width: "100%" }}
+				alt="logo"
+				className="small-screen-only"
+			/>
+			<Row
+				justify="center"
+				align="middle"
+				style={{ display: "flexbox", marginTop: "65px" }}
+				className="hero-height"
+			>
 				<Col xs={24} sm={24} md={16} lg={16} xl={16}>
 					<div className="title">
-						<h1 style={{ fontSize: "40px", fontWeight: "bold" }}>
-							Sports Players' stocks DEX
+						<h1
+							style={{
+								fontSize: "50px",
+								fontWeight: "bold",
+								margin: "0px 0px 20px",
+							}}
+						>
+							Sports Players stocks DEX
 						</h1>
 						<h4
 							style={{
 								color: "black",
-								fontWeight: "bold",
 								textAlign: "center",
 							}}
 						>
-							Buy and Sell your Favourite Sports Player’s Stocks
+							<s style={{ fontSize: "20px", color: "#263238" }}>
+								Stop being a Fantasy Player
+							</s>
+							<br />
+							<span style={{ fontSize: "30px", color: "#263238" }}>
+								Start being an Owner
+							</span>
+							<br />
+							<br />
+							<span
+								style={{
+									fontSize: "30px",
+									color: "#002c9c",
+								}}
+							>
+								Buy and Sell your Favourite Sports Player’s Stocks
+							</span>
+							<br />
+							<br />
 						</h4>
-
+						<Col xs={24} sm={24} md={0}>
+							<img
+								className="hero-image"
+								src="/soccer-hero.png"
+								alt="soccer-player"
+							/>
+						</Col>
 						<Button
 							type="primary"
 							size="large"
@@ -250,14 +292,16 @@ function Hero(props) {
 									}}
 								>
 									⚽ Login to avail 20 $FANC Airdrop
-									<br />⚽ To join Fanance Club Referral Program and
-									<br />⚽ To get early access to $FANC Token Sale
+									<br />
+									🏏 To join Fanance Club Referral Program and
+									<br />
+									🏀 To get early access to $FANC Token Sale
 								</h5>
 							</>
 						)}
 					</div>
 				</Col>
-				<Col xs={24} sm={24} md={8} lg={8} xl={8}>
+				<Col xs={0} sm={0} md={8} lg={8} xl={8}>
 					<img
 						className="hero-image"
 						src="/soccer-hero.png"
