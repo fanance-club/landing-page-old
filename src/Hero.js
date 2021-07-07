@@ -205,8 +205,8 @@ function Hero(props) {
 		<div
 			style={{
 				backgroundImage:
-					"linear-gradient(0deg, rgb(255,255,255,0.8), rgb(255,255,255,0.6)),url('/blue-bg.jpg')",
-				backgroundSize: "auto",
+					"linear-gradient(0deg, rgb(255,255,255,0.8), rgb(255,255,255,0.6)),url('/stadium-bg.jpg')",
+				backgroundSize: "cover",
 				backgroundPosition: "bottom",
 			}}
 		>
