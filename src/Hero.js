@@ -232,7 +232,7 @@ function Hero(props) {
 								margin: "0px 0px 20px",
 							}}
 						>
-							Sports Players stocks DEX
+							Sports Player's stocks DEX
 						</h1>
 						<h4
 							style={{
