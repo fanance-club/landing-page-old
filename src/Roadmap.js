@@ -42,12 +42,12 @@ function Features() {
 					<Timeline.Item label="Q3 2021">
 						Private Sale
 						<br />
-						Pre Sale Round 1 ( Very Early Adopter Sale Round)
+						Pre Sale Round 1 ( Very Early Backers Sale Round)
 						<br />
 						TestNet Launch
 					</Timeline.Item>
 					<Timeline.Item label="Q4 2021">
-						Pre-sale Round 2 ( Early Adopter Sale Round)
+						Pre-sale Round 2 ( Early Backers Sale Round)
 						<br />
 						Community Sale (Initial Stake Pool Offering)
 						<br />

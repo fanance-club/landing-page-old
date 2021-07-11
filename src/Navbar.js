@@ -39,10 +39,9 @@ const Navbar = () => {
 						</a>
 					</Route>
 				</Menu.Item>
-
 				<Menu.Item key="whitepaper">
 					<a
-						href="/whitepaper.pdf"
+						href="https://fanance-club.gitbook.io/fanance-club/lite-paper"
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{ color: "black", fontWeight: "bold" }}
@@ -50,14 +49,14 @@ const Navbar = () => {
 						WHITEPAPER
 					</a>
 				</Menu.Item>
-				<Menu.Item key="litepaper">
+				<Menu.Item key="docs">
 					<a
-						href="https://fanance-club.gitbook.io/fanance-club/lite-paper"
+						href="https://fanance-club.gitbook.io/fanance-club/tokenomics/usdfanc-tokenomics"
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{ color: "black", fontWeight: "bold" }}
 					>
-						LITEPAPER
+						DOCS
 					</a>
 				</Menu.Item>
 				<Menu.Item key="FAQ">
