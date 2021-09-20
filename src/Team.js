@@ -43,7 +43,7 @@ const Team = () => {
 						VP marketing of India's 1st crypto exchange
 					</p>
 				</Col>
-				{/* <Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
+				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
 					<a
 						href="https://www.linkedin.com/in/shriraghuraaman"
 						target="_blank"
@@ -67,32 +67,6 @@ const Team = () => {
 						EX-EMURGO - AGM Blockchain tech
 						<br />
 						DeFi blockchain tech lead
-					</p>
-				</Col> */}
-				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
-					<a
-						href="https://www.linkedin.com/in/trilochana-chary-7b73b423"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<img
-							src="/team-5.jpg"
-							alt="team-5"
-							width="200px"
-							style={{
-								borderRadius: "50%",
-								borderColor: "#18ffff",
-								border: "3px solid #18ffff",
-							}}
-						/>
-					</a>
-					<p style={{ fontWeight: "bold" }}>T. Chary</p>
-					<p style={{ color: "black" }}>
-						<span style={{ fontWeight: "bold" }}>
-							Blockchain Smart Contract Developer lead
-						</span>
-						<br />
-						EX-EMURGO - AGM Blockchain Tech lead
 					</p>
 				</Col>
 				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
@@ -147,7 +121,32 @@ const Team = () => {
 						EX-EMURGO - Sales & Marketing Manager
 					</p>
 				</Col>
-
+				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
+					<a
+						href="https://www.linkedin.com/in/trilochana-chary-7b73b423"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<img
+							src="/team-5.jpg"
+							alt="team-5"
+							width="200px"
+							style={{
+								borderRadius: "50%",
+								borderColor: "#18ffff",
+								border: "3px solid #18ffff",
+							}}
+						/>
+					</a>
+					<p style={{ fontWeight: "bold" }}>T. Chary</p>
+					<p style={{ color: "black" }}>
+						<span style={{ fontWeight: "bold" }}>
+							Blockchain Smart Contract Developer lead
+						</span>
+						<br />
+						EX-EMURGO - AGM Blockchain Tech lead
+					</p>
+				</Col>
 				<Col style={{ color: "black", padding: "20px" }} xs={24} sm={12} md={6}>
 					<a
 						href="https://www.linkedin.com/in/ramkiranb"

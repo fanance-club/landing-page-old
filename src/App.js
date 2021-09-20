@@ -36,18 +36,18 @@ function App() {
 			<div className="App">
 				{/* <Navbar /> */}
 				<Hero user={user} />
-				<Switch>
+				{/* <Switch>
 					<Route exact path="/team">
 						<Team />
 					</Route>
 					<Route path="/">
 						<Features />
 						<DAPP />
-						<About />
-						{/* <FANCToken /> */}
-						<Roadmap />
+						<About /> */}
+				{/* <FANCToken /> */}
+				{/* <Roadmap />
 					</Route>
-				</Switch>
+				</Switch> */}
 
 				<Footer />
 			</div>
