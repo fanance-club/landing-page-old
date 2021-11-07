@@ -43,9 +43,9 @@ function App() {
 					<Route path="/">
 						<Features />
 						<DAPP />
-						<About /> */}
-				{/* <FANCToken /> */}
-				{/* <Roadmap />
+						<About />
+						<FANCToken />
+						<Roadmap />
 					</Route>
 				</Switch> */}
 

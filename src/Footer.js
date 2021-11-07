@@ -42,7 +42,7 @@ function FooterContent() {
 					</Divider>
 					<Row>
 						<Col xs={24} sm={12} md={12} lg={12}>
-							<a href="/whitepaper.pdf" target="_blank" rel="noreferrer">
+							{/* <a href="/whitepaper.pdf" target="_blank" rel="noreferrer">
 								Whitepaper
 							</a>
 							<br></br>
@@ -63,7 +63,7 @@ function FooterContent() {
 							</a>
 							<br></br>
 							<a href="/#/team">Team</a>
-							<br></br>
+							<br></br> */}
 							<a
 								href="https://twitter.com/FananceClub"
 								target="_blank"

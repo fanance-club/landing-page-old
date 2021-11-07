@@ -23,7 +23,7 @@ const Navbar = () => {
 			>
 				Fanance Club
 			</span> */}
-			<Menu
+			{/* <Menu
 				mode="horizontal"
 				style={{
 					float: "right",
@@ -69,7 +69,7 @@ const Navbar = () => {
 						FAQs
 					</a>
 				</Menu.Item>
-			</Menu>
+			</Menu> */}
 		</Header>
 	);
 };
