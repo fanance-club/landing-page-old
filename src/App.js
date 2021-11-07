@@ -36,7 +36,7 @@ function App() {
 			<div className="App">
 				{/* <Navbar /> */}
 				<Hero user={user} />
-				{/* <Switch>
+				<Switch>
 					<Route exact path="/team">
 						<Team />
 					</Route>
@@ -47,7 +47,7 @@ function App() {
 						<FANCToken />
 						<Roadmap />
 					</Route>
-				</Switch> */}
+				</Switch>
 
 				<Footer />
 			</div>
